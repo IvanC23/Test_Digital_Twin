@@ -27,6 +27,7 @@ public class CameraMovement : MonoBehaviour
         }
 
         // Rotazione sull'asse X
+        // ggggg
         if (Input.GetKey(KeyCode.R))
         {
             transform.Rotate(Vector3.right, -rotationSpeed * Time.deltaTime);
