@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SourceProvider : MonoBehaviour
@@ -15,7 +16,8 @@ public class SourceProvider : MonoBehaviour
     private Vector3 _spawnPoint;
     private Vector3 _spawnPlusOffset;
     private GameObject _selectedPrefab;
-    // Update is called once per frame
+    const string CARATTERI = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
     void Awake()
     {
         _spawnPoint = _convey.GetStartPosition();
@@ -26,13 +28,20 @@ public class SourceProvider : MonoBehaviour
 
     private void SpawnResourceAtInterval()
     {
-        GameObject spawnedObject = Instantiate(_selectedPrefab, _spawnPlusOffset, Quaternion.identity);
 
         if (_selectedResource == ResourceTypes.Resources.Base)
         {
-            float randomScaleFactor = Random.Range(0f, 1f);
-            float newScaleX = spawnedObject.transform.localScale.x + spawnedObject.transform.localScale.x * randomScaleFactor;
-            spawnedObject.transform.localScale = new Vector3(newScaleX, spawnedObject.transform.localScale.y, spawnedObject.transform.localScale.z);
+            string uniqueID = GenerateRandomAlphanumericCode(6);
+            float X = Random.Range(0, 100);
+            Color randomColor = new Color(Random.value, Random.value, Random.value);
+
+            GameObject baseGameObject = Instantiate(_selectedPrefab, _spawnPlusOffset, Quaternion.identity);
+            baseGameObject.GetComponent<Base>().SetValues(ID: uniqueID, X: X, Color: randomColor);
         }
+    }
+    private string GenerateRandomAlphanumericCode(int length)
+    {
+        return new string(Enumerable.Repeat(CARATTERI, length)
+          .Select(s => s[Random.Range(0, s.Length)]).ToArray());
     }
 }

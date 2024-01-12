@@ -13,12 +13,6 @@ public class Convey : MonoBehaviour
 
     private List<GameObject> _objectsToMove = new List<GameObject>();
 
-
-    public Vector3 GetStartPosition()
-    {
-        return _startPosition.position;
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Resource"))
@@ -45,8 +39,15 @@ public class Convey : MonoBehaviour
     {
         for (int i = _objectsToMove.Count - 1; i >= 0; i--)
         {
-            GameObject currentObject = _objectsToMove[i];
-            MoveObject(currentObject);
+            if (_objectsToMove[i] != null)
+            {
+                GameObject currentObject = _objectsToMove[i];
+                MoveObject(currentObject);
+            }
+            else
+            {
+                _objectsToMove.Remove(_objectsToMove[i]);
+            }
         }
     }
 
@@ -54,6 +55,11 @@ public class Convey : MonoBehaviour
     {
         float step = _speedMeterPerSecond * Time.deltaTime;
         obj.transform.position = Vector3.MoveTowards(obj.transform.position, _endPosition.position, step);
+    }
+
+    public Vector3 GetStartPosition()
+    {
+        return _startPosition.position;
     }
 
 }

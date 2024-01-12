@@ -352,7 +352,10 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Script/Camera/CameraMovement.cs"
 "Assets/Script/Components/Convey.cs"
+"Assets/Script/Components/FlowSplitter.cs"
 "Assets/Script/Components/SourceProvider.cs"
+"Assets/Script/Components/SourceReceiver.cs"
+"Assets/Script/Resources/Base.cs"
 "Assets/Script/Resources/ResourceTypes.cs"
 -langversion:9.0
 

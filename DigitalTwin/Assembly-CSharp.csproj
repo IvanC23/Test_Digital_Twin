@@ -40,6 +40,9 @@
      <Compile Include="Assets\Script\Components\SourceProvider.cs" />
      <Compile Include="Assets\Script\Resources\ResourceTypes.cs" />
      <Compile Include="Assets\Script\Components\Convey.cs" />
+     <Compile Include="Assets\Script\Components\SourceReceiver.cs" />
+     <Compile Include="Assets\Script\Components\FlowSplitter.cs" />
+     <Compile Include="Assets\Script\Resources\Base.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
