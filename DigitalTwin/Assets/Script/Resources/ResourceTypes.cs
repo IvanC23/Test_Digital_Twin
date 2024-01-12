@@ -10,4 +10,11 @@ public enum Resources
     Body,
     Detail
 }
+
+public enum Composites
+{
+    Composite1,
+    Composite2,
+    Composite3
+}
 }

@@ -12,7 +12,7 @@ public class QualityChecker : MonoBehaviour
     {
         if (other.CompareTag("Resource"))
         {
-            if (other.gameObject.GetComponent<Base>().GetX() > 50)
+            if (other.gameObject.GetComponentsInChildren<Base>()[0].GetX() + other.gameObject.GetComponentsInChildren<Base>()[1].GetX() > 100)
             {
                 RepositionResourceSuccess(other.gameObject);
             }

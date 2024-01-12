@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Base : MonoBehaviour
 {
-    //private ResourceTypes.Resources type = ResourceTypes.Resources.Base;
     [Header("Parametri necessari")]
     [SerializeField] Material _myMaterial;
     private Material _myMaterialInstance;
 
-    
+
     [Header("Parametri da non modificare, solo per visualizzare da Editor")]
     [SerializeField] private string _myID;
     [SerializeField] private float _x;
@@ -28,8 +27,21 @@ public class Base : MonoBehaviour
 
         GetComponent<Renderer>().material = _myMaterialInstance;
     }
-    public float GetX(){
+    public float GetX()
+    {
         return _x;
     }
+    public string GetID()
+    {
+        return _myID;
+    }
+    public Color GetColor()
+    {
+        return _myColor;
+    }
+    public float GetHeight(){
+        return transform.localScale.y;
+    }
+
 
 }

@@ -20,7 +20,6 @@ public class Convey : MonoBehaviour
     {
         if (other.CompareTag("Resource"))
         {
-            Debug.Log("Collider Found!");
             _objectsToMove.Add(other.gameObject);
         }
     }
