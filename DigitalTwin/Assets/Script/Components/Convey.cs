@@ -39,7 +39,7 @@ public class Convey : MonoBehaviour
     {
         for (int i = _objectsToMove.Count - 1; i >= 0; i--)
         {
-            if (_objectsToMove[i] != null)
+            if (_objectsToMove[i] != null && _objectsToMove[i].activeSelf)
             {
                 GameObject currentObject = _objectsToMove[i];
                 MoveObject(currentObject);

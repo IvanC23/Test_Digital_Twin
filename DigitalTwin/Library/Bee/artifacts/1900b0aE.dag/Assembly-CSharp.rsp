@@ -351,6 +351,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Script/Camera/CameraMovement.cs"
+"Assets/Script/Components/Buffer.cs"
 "Assets/Script/Components/Convey.cs"
 "Assets/Script/Components/FlowSplitter.cs"
 "Assets/Script/Components/SourceProvider.cs"

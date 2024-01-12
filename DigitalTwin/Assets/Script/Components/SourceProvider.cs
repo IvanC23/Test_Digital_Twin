@@ -35,7 +35,7 @@ public class SourceProvider : MonoBehaviour
             float X = Random.Range(0, 100);
             Color randomColor = new Color(Random.value, Random.value, Random.value);
 
-            GameObject baseGameObject = Instantiate(_selectedPrefab, _spawnPlusOffset, Quaternion.identity);
+            GameObject baseGameObject = Instantiate(_selectedPrefab, _spawnPlusOffset, _convey.transform.rotation);
             baseGameObject.GetComponent<Base>().SetValues(ID: uniqueID, X: X, Color: randomColor);
         }
     }
