@@ -12,6 +12,8 @@ public class Convey : MonoBehaviour
     [Header("Parametri configurabili")]
     [SerializeField] private float _speedMeterPerSecond = 1f;
 
+
+    
     private List<GameObject> _objectsToMove = new List<GameObject>();
 
     void OnTriggerEnter(Collider other)

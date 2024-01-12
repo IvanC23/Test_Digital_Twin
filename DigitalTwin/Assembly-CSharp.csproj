@@ -44,6 +44,7 @@
      <Compile Include="Assets\Script\Components\FlowSplitter.cs" />
      <Compile Include="Assets\Script\Resources\Base.cs" />
      <Compile Include="Assets\Script\Components\Buffer.cs" />
+     <Compile Include="Assets\Script\Components\QualityChecker.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
