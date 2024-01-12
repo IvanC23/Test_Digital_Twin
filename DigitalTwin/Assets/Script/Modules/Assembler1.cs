@@ -30,17 +30,17 @@ public class Assembler1 : MonoBehaviour
 
                 if (_baseCollected.Count >= _baseNeeded)
                 {
-                    StartCoroutine(StoreAndSend());
+                    StartCoroutine(AssembleAndSend());
                 }
             }
         }
     }
 
-    private IEnumerator StoreAndSend()
+    private IEnumerator AssembleAndSend()
     {
 
-        GameObject _base1 = _baseCollected.Dequeue();
-        GameObject _base2 = _baseCollected.Dequeue();
+        Base _base1 = _baseCollected.Dequeue().GetComponent<Base>();
+        Base _base2 = _baseCollected.Dequeue().GetComponent<Base>();
 
         yield return new WaitForSecondsRealtime(_timeToAssemble);
 
@@ -50,12 +50,11 @@ public class Assembler1 : MonoBehaviour
 
         var newPosition = new UnityEngine.Vector3(_spawnPoint.x, compositeComponent.GetHeight() / 2 + _spawnPoint.y, _spawnPoint.z);
         baseGameObject.transform.position = newPosition;
-        compositeComponent.SetValuesBase1(_base1.GetComponent<Base>().GetID(), _base1.GetComponent<Base>().GetX(), _base1.GetComponent<Base>().GetColor());
-        compositeComponent.SetValuesBase2(_base2.GetComponent<Base>().GetID(), _base2.GetComponent<Base>().GetX(), _base2.GetComponent<Base>().GetColor());
+        compositeComponent.SetValuesBase1(_base1.GetID(), _base1.GetX(), _base1.GetColor());
+        compositeComponent.SetValuesBase2(_base2.GetID(), _base2.GetX(), _base2.GetColor());
 
-
-        Destroy(_base1);
-        Destroy(_base2);
+        Destroy(_base1.gameObject);
+        Destroy(_base2.gameObject);
 
     }
 

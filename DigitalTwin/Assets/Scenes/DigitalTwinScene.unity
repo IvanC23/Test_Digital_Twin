@@ -1439,7 +1439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selectedResource: 0
-  _timeToSpawn: 1
+  _timeToSpawn: 4
   _convey: {fileID: 886334391}
   _resourcesPrefabs:
   - {fileID: 2690885383064011892, guid: 01ef0a5892b996641889b8f5471815ef, type: 3}
