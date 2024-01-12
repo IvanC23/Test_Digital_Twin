@@ -7,6 +7,7 @@ public class Convey : MonoBehaviour
     [Header("Parametri necessari")]
     [SerializeField] private Transform _startPosition;
     [SerializeField] private Transform _endPosition;
+    [SerializeField] private Transform _nextComponentPosition;
 
     [Header("Parametri configurabili")]
     [SerializeField] private float _speedMeterPerSecond = 1f;
@@ -55,6 +56,10 @@ public class Convey : MonoBehaviour
     {
         float step = _speedMeterPerSecond * Time.deltaTime;
         obj.transform.position = Vector3.MoveTowards(obj.transform.position, _endPosition.position, step);
+        if(obj.transform.position == _endPosition.position){
+            _objectsToMove.Remove(obj);
+            obj.transform.position = _nextComponentPosition.position;
+        }
     }
 
     public Vector3 GetStartPosition()
