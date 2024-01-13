@@ -351,7 +351,6 @@ GameObject:
   - component: {fileID: 340131235}
   - component: {fileID: 340131239}
   - component: {fileID: 340131238}
-  - component: {fileID: 340131237}
   - component: {fileID: 340131236}
   m_Layer: 0
   m_Name: Convey (3)
@@ -393,19 +392,6 @@ MonoBehaviour:
   _endPosition: {fileID: 1373441272}
   _nextComponentPosition: {fileID: 1593399280}
   _speedMeterPerSecond: 1
---- !u!65 &340131237
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340131234}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &340131238
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -568,7 +554,6 @@ GameObject:
   - component: {fileID: 373333710}
   - component: {fileID: 373333714}
   - component: {fileID: 373333713}
-  - component: {fileID: 373333712}
   - component: {fileID: 373333711}
   m_Layer: 0
   m_Name: Convey (7)
@@ -610,19 +595,6 @@ MonoBehaviour:
   _endPosition: {fileID: 929533281}
   _nextComponentPosition: {fileID: 1850284335}
   _speedMeterPerSecond: 5
---- !u!65 &373333712
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 373333709}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &373333713
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -767,7 +739,6 @@ GameObject:
   - component: {fileID: 477839175}
   - component: {fileID: 477839179}
   - component: {fileID: 477839178}
-  - component: {fileID: 477839177}
   - component: {fileID: 477839176}
   m_Layer: 0
   m_Name: Buffer
@@ -805,19 +776,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _convey: {fileID: 340131236}
   _timeToBuff: 2
---- !u!65 &477839177
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477839174}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &477839178
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1157,7 +1115,6 @@ GameObject:
   - component: {fileID: 886334390}
   - component: {fileID: 886334394}
   - component: {fileID: 886334393}
-  - component: {fileID: 886334392}
   - component: {fileID: 886334391}
   m_Layer: 0
   m_Name: Convey (6)
@@ -1199,19 +1156,6 @@ MonoBehaviour:
   _endPosition: {fileID: 1573742238}
   _nextComponentPosition: {fileID: 2130746845}
   _speedMeterPerSecond: 5
---- !u!65 &886334392
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 886334389}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &886334393
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1504,7 +1448,6 @@ GameObject:
   - component: {fileID: 1126855089}
   - component: {fileID: 1126855093}
   - component: {fileID: 1126855092}
-  - component: {fileID: 1126855091}
   - component: {fileID: 1126855090}
   m_Layer: 0
   m_Name: SourceReceiver (1)
@@ -1540,19 +1483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e45d8a5f2ee4dcc469a9a7e39fb73069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &1126855091
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126855088}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1126855092
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1614,7 +1544,6 @@ GameObject:
   - component: {fileID: 1132086638}
   - component: {fileID: 1132086637}
   - component: {fileID: 1132086636}
-  - component: {fileID: 1132086635}
   - component: {fileID: 1132086634}
   m_Layer: 0
   m_Name: Convey (1)
@@ -1639,19 +1568,6 @@ MonoBehaviour:
   _endPosition: {fileID: 51759997}
   _nextComponentPosition: {fileID: 477839175}
   _speedMeterPerSecond: 5
---- !u!65 &1132086635
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132086633}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1132086636
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1761,7 +1677,6 @@ GameObject:
   - component: {fileID: 1294049736}
   - component: {fileID: 1294049735}
   - component: {fileID: 1294049734}
-  - component: {fileID: 1294049733}
   - component: {fileID: 1294049732}
   m_Layer: 0
   m_Name: Convey (2)
@@ -1784,21 +1699,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startPosition: {fileID: 716675406}
   _endPosition: {fileID: 1819336105}
-  _nextComponentPosition: {fileID: 1126855089}
+  _nextComponentPosition: {fileID: 1807963735}
   _speedMeterPerSecond: 2.5
---- !u!65 &1294049733
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294049731}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1294049734
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1939,7 +1841,6 @@ GameObject:
   - component: {fileID: 1411320940}
   - component: {fileID: 1411320944}
   - component: {fileID: 1411320943}
-  - component: {fileID: 1411320942}
   - component: {fileID: 1411320941}
   m_Layer: 0
   m_Name: Convey (5)
@@ -1981,19 +1882,6 @@ MonoBehaviour:
   _endPosition: {fileID: 246438901}
   _nextComponentPosition: {fileID: 1738592034}
   _speedMeterPerSecond: 1
---- !u!65 &1411320942
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411320939}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1411320943
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2148,7 +2036,6 @@ GameObject:
   - component: {fileID: 1593399280}
   - component: {fileID: 1593399279}
   - component: {fileID: 1593399278}
-  - component: {fileID: 1593399277}
   - component: {fileID: 1593399281}
   m_Layer: 0
   m_Name: SourceReceiver
@@ -2157,19 +2044,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1593399277
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1593399276}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1593399278
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2258,7 +2132,6 @@ GameObject:
   - component: {fileID: 1738592034}
   - component: {fileID: 1738592038}
   - component: {fileID: 1738592037}
-  - component: {fileID: 1738592036}
   - component: {fileID: 1738592035}
   m_Layer: 0
   m_Name: SourceReceiver (2)
@@ -2294,19 +2167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e45d8a5f2ee4dcc469a9a7e39fb73069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &1738592036
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1738592033}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1738592037
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2430,7 +2290,6 @@ GameObject:
   - component: {fileID: 1807963735}
   - component: {fileID: 1807963739}
   - component: {fileID: 1807963738}
-  - component: {fileID: 1807963737}
   - component: {fileID: 1807963740}
   m_Layer: 0
   m_Name: QualityChecker
@@ -2454,19 +2313,6 @@ Transform:
   m_Father: {fileID: 2131315372}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1807963737
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807963734}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1807963738
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2573,7 +2419,6 @@ GameObject:
   - component: {fileID: 1850284335}
   - component: {fileID: 1850284338}
   - component: {fileID: 1850284337}
-  - component: {fileID: 1850284336}
   - component: {fileID: 1850284339}
   m_Layer: 0
   m_Name: FlowSplitter
@@ -2597,19 +2442,6 @@ Transform:
   m_Father: {fileID: 2131315372}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1850284336
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850284334}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1850284337
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2688,7 +2520,6 @@ GameObject:
   - component: {fileID: 1931877617}
   - component: {fileID: 1931877621}
   - component: {fileID: 1931877620}
-  - component: {fileID: 1931877619}
   - component: {fileID: 1931877618}
   m_Layer: 0
   m_Name: Convey (4)
@@ -2730,19 +2561,6 @@ MonoBehaviour:
   _endPosition: {fileID: 787920614}
   _nextComponentPosition: {fileID: 1126855089}
   _speedMeterPerSecond: 1
---- !u!65 &1931877619
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931877616}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1931877620
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2835,7 +2653,6 @@ GameObject:
   - component: {fileID: 2053966388}
   - component: {fileID: 2053966387}
   - component: {fileID: 2053966386}
-  - component: {fileID: 2053966385}
   - component: {fileID: 2053966389}
   m_Layer: 0
   m_Name: Convey
@@ -2844,19 +2661,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &2053966385
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053966384}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2053966386
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2952,7 +2756,6 @@ GameObject:
   - component: {fileID: 2130746849}
   - component: {fileID: 2130746848}
   - component: {fileID: 2130746847}
-  - component: {fileID: 2130746846}
   m_Layer: 0
   m_Name: Assembler
   m_TagString: Untagged
@@ -2975,19 +2778,6 @@ Transform:
   m_Father: {fileID: 2131315372}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2130746846
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2130746844}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2130746847
 MeshRenderer:
   m_ObjectHideFlags: 0

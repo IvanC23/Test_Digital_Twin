@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Composite1 : MonoBehaviour
+public class Composite1 : MonoBehaviour,HeightSender
 {
     [SerializeField] Base _base1;
     [SerializeField] Base _base2;

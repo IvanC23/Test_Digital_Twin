@@ -13,16 +13,14 @@ public class SourceProvider : MonoBehaviour
     [SerializeField] private Convey _convey;
     [SerializeField] private List<GameObject> _resourcesPrefabs;
 
-    private Vector3 _spawnPoint;
-    private Vector3 _spawnPlusOffset;
     private GameObject _selectedResourcePrefab;
     const string CARATTERI = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
     void Awake()
     {
-        _spawnPoint = _convey.GetStartPosition();
+
         _selectedResourcePrefab = _resourcesPrefabs[(int)_selectedResource];
-        _spawnPlusOffset = new Vector3(_spawnPoint.x, _spawnPoint.y + _selectedResourcePrefab.transform.localScale.y / 2, _spawnPoint.z);
+
         InvokeRepeating("SpawnResourceAtInterval", 0f, _timeToSpawn);
     }
 
@@ -35,8 +33,9 @@ public class SourceProvider : MonoBehaviour
             float X = Random.Range(0, 100);
             Color randomColor = new Color(Random.value, Random.value, Random.value);
 
-            GameObject baseGameObject = Instantiate(_selectedResourcePrefab, _spawnPlusOffset, _convey.transform.rotation);
-            baseGameObject.GetComponent<Base>().SetValues(ID: uniqueID, X: X, Color: randomColor);
+            GameObject instantiatedResource = Instantiate(_selectedResourcePrefab);
+            instantiatedResource.GetComponent<Base>().SetValues(ID: uniqueID, X: X, Color: randomColor);
+            _convey.GetComponent<Receiver>().ReceiveResource(instantiatedResource);
         }
     }
     private string GenerateRandomAlphanumericCode(int length)

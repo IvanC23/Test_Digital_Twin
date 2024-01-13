@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Convey : MonoBehaviour
+public class Convey : MonoBehaviour, Receiver
 {
     [Header("Parametri necessari")]
     [SerializeField] private Transform _startPosition;
@@ -13,22 +13,20 @@ public class Convey : MonoBehaviour
     [SerializeField] private float _speedMeterPerSecond = 1f;
 
 
-    
-    private List<GameObject> _objectsToMove = new List<GameObject>();
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Resource"))
-        {
-            _objectsToMove.Add(other.gameObject);
-        }
-    }
+    private List<GameObject> _resourceToMove = new List<GameObject>();
 
-    void OnTriggerExit(Collider other)
+
+    void Receiver.ReceiveResource(GameObject Resource)
     {
-        if (other.CompareTag("Resource"))
+        if (Resource.CompareTag("Resource"))
         {
-            _objectsToMove.Remove(other.gameObject);
+            Vector3 start = _startPosition.position;
+            Vector3 positionPlusOffset = new Vector3(start.x, start.y + Resource.GetComponent<HeightSender>().GetHeight(), start.z);
+
+            Resource.transform.position = positionPlusOffset;
+            Resource.transform.rotation = transform.rotation;
+            _resourceToMove.Add(Resource);
         }
     }
 
@@ -39,17 +37,9 @@ public class Convey : MonoBehaviour
 
     private void MoveObjects()
     {
-        for (int i = _objectsToMove.Count - 1; i >= 0; i--)
+        for (int i = _resourceToMove.Count - 1; i >= 0; i--)
         {
-            if (_objectsToMove[i] != null && _objectsToMove[i].activeSelf)
-            {
-                GameObject currentObject = _objectsToMove[i];
-                MoveObject(currentObject);
-            }
-            else
-            {
-                _objectsToMove.Remove(_objectsToMove[i]);
-            }
+            MoveObject(_resourceToMove[i]);
         }
     }
 
@@ -57,15 +47,12 @@ public class Convey : MonoBehaviour
     {
         float step = _speedMeterPerSecond * Time.deltaTime;
         obj.transform.position = Vector3.MoveTowards(obj.transform.position, _endPosition.position, step);
-        if(obj.transform.position == _endPosition.position){
-            _objectsToMove.Remove(obj);
+        if (obj.transform.position == _endPosition.position)
+        {
+            _resourceToMove.Remove(obj);
             obj.transform.position = _nextComponentPosition.position;
+            _nextComponentPosition.gameObject.GetComponent<Receiver>().ReceiveResource(obj);
         }
-    }
-
-    public Vector3 GetStartPosition()
-    {
-        return _startPosition.position;
     }
 
 }

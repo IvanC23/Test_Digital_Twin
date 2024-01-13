@@ -47,6 +47,8 @@
      <Compile Include="Assets\Script\Modules\Assembler1.cs" />
      <Compile Include="Assets\Script\Modules\SourceReceiver.cs" />
      <Compile Include="Assets\Script\Camera\CameraMovement.cs" />
+     <Compile Include="Assets\Script\Modules\Interfaces\Receiver.cs" />
+     <Compile Include="Assets\Script\Resources\Interfaces\HeightSender.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

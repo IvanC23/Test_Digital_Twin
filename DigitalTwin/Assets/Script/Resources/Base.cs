@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Base : MonoBehaviour
+public class Base : MonoBehaviour,HeightSender
 {
     [Header("Parametri necessari")]
     [SerializeField] Material _myMaterial;

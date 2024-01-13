@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlowSplitter : MonoBehaviour
+public class FlowSplitter : MonoBehaviour, Receiver
 {
     [Header("Parametri necessari")]
     [SerializeField] private List<ConveyWithWeight> _conveysWithWeight;
@@ -24,13 +24,14 @@ public class FlowSplitter : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Resource"))
+    void Receiver.ReceiveResource(GameObject Resource){
+        if (Resource.CompareTag("Resource"))
         {
-            RepositionResource(other.gameObject);
+            RepositionResource(Resource);
         }
     }
+
+    
 
     public void RepositionResource(GameObject resource)
     {
@@ -45,8 +46,7 @@ public class FlowSplitter : MonoBehaviour
 
             if (randomValue <= cumulativeWeight)
             {
-                resource.transform.position = _conveysWithWeight[i]._convey.GetStartPosition();
-                resource.transform.rotation = _conveysWithWeight[i]._convey.transform.rotation;
+                _conveysWithWeight[i]._convey.GetComponent<Receiver>().ReceiveResource(resource);
                 break;
             }
         }
