@@ -37,25 +37,26 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\Modules\Buffer.cs" />
+     <Compile Include="Assets\Script\Resources\Body.cs" />
      <Compile Include="Assets\Script\Modules\QualityChecker.cs" />
      <Compile Include="Assets\Script\Resources\Composite\Composite1.cs" />
      <Compile Include="Assets\Script\Modules\SourceProvider.cs" />
+     <Compile Include="Assets\Script\Resources\Detail.cs" />
      <Compile Include="Assets\Script\Modules\FlowSplitter.cs" />
+     <Compile Include="Assets\Script\Resources\Composite\Composite2.cs" />
      <Compile Include="Assets\Script\Modules\Convey.cs" />
      <Compile Include="Assets\Script\Resources\ResourceTypes.cs" />
+     <Compile Include="Assets\Script\Resources\AbstractResource.cs" />
      <Compile Include="Assets\Script\Resources\Base.cs" />
      <Compile Include="Assets\Script\Modules\Assemblers\Assembler1.cs" />
-     <Compile Include="Assets\Script\Modules\SourceReceiver.cs" />
-     <Compile Include="Assets\Script\Camera\CameraMovement.cs" />
-     <Compile Include="Assets\Script\Modules\Interfaces\Receiver.cs" />
-     <Compile Include="Assets\Script\Resources\Interfaces\HeightSender.cs" />
-     <Compile Include="Assets\Script\Resources\AbstractResource.cs" />
-     <Compile Include="Assets\Script\Resources\Body.cs" />
-     <Compile Include="Assets\Script\Modules\Assemblers\Assembler2.cs" />
-     <Compile Include="Assets\Script\Resources\Composite\Composite2.cs" />
-     <Compile Include="Assets\Script\Resources\Detail.cs" />
-     <Compile Include="Assets\Script\Resources\Composite\Composite3.cs" />
      <Compile Include="Assets\Script\Modules\Assemblers\Assembler3.cs" />
+     <Compile Include="Assets\Script\Modules\SourceReceiver.cs" />
+     <Compile Include="Assets\Script\Modules\Assemblers\Assembler2.cs" />
+     <Compile Include="Assets\Script\Camera\CameraMovement.cs" />
+     <Compile Include="Assets\Script\Resources\Interfaces\HeightSender.cs" />
+     <Compile Include="Assets\Script\Resources\Composite\Composite3.cs" />
+     <Compile Include="Assets\Script\Modules\Interfaces\Receiver.cs" />
+     <Compile Include="Assets\Script\Utility\TimeManager.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
