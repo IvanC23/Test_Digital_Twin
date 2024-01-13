@@ -31,7 +31,7 @@ public class SourceProvider : MonoBehaviour
         if (_selectedResource == ResourceTypes.Resources.Base)
         {
             string uniqueID = GenerateRandomAlphanumericCode(6);
-            float X = Random.Range(0, 100);
+            float X = Random.Range(0, 101);
             Color randomColor = new Color(Random.value, Random.value, Random.value);
 
             GameObject instantiatedResource = Instantiate(_selectedResourcePrefab);
@@ -58,6 +58,6 @@ public class SourceProvider : MonoBehaviour
     }
     private char GenerateRandomChar()
     {
-        return _charForBodyKey[Random.Range(0, 2)];
+        return _charForBodyKey[Random.Range(0, 3)];
     }
 }
