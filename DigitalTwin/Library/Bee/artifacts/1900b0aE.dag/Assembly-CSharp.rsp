@@ -380,6 +380,7 @@
 "Assets/Script/Modules/SourceReceiver.cs"
 "Assets/Script/Resources/AbstractResource.cs"
 "Assets/Script/Resources/Base.cs"
+"Assets/Script/Resources/Body.cs"
 "Assets/Script/Resources/Composite1.cs"
 "Assets/Script/Resources/Interfaces/HeightSender.cs"
 "Assets/Script/Resources/ResourceTypes.cs"

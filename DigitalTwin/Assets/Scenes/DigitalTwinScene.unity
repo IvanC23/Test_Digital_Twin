@@ -451,9 +451,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 341169713}
+  - component: {fileID: 341169714}
   - component: {fileID: 341169712}
   - component: {fileID: 341169711}
-  - component: {fileID: 341169714}
   m_Layer: 0
   m_Name: SourceProvider
   m_TagString: Untagged
@@ -538,11 +538,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6695da2db9d5dbd4085f36344fadcc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectedResource: 0
+  _selectedResource: 1
   _timeToSpawn: 1
   _convey: {fileID: 2053966389}
   _resourcesPrefabs:
   - {fileID: 2690885383064011892, guid: 01ef0a5892b996641889b8f5471815ef, type: 3}
+  - {fileID: 2690885383064011892, guid: 292dcf8792bafce4296bf9e8e82d7641, type: 3}
 --- !u!1 &373333709
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,9 +738,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477839175}
+  - component: {fileID: 477839176}
   - component: {fileID: 477839179}
   - component: {fileID: 477839178}
-  - component: {fileID: 477839176}
   m_Layer: 0
   m_Name: Buffer
   m_TagString: Untagged
@@ -1345,9 +1346,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 984650773}
+  - component: {fileID: 984650774}
   - component: {fileID: 984650776}
   - component: {fileID: 984650775}
-  - component: {fileID: 984650774}
   m_Layer: 0
   m_Name: SourceProvider (1)
   m_TagString: Untagged
@@ -1446,9 +1447,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1126855089}
+  - component: {fileID: 1126855090}
   - component: {fileID: 1126855093}
   - component: {fileID: 1126855092}
-  - component: {fileID: 1126855090}
   m_Layer: 0
   m_Name: SourceReceiver (1)
   m_TagString: Untagged
@@ -2034,9 +2035,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1593399280}
+  - component: {fileID: 1593399281}
   - component: {fileID: 1593399279}
   - component: {fileID: 1593399278}
-  - component: {fileID: 1593399281}
   m_Layer: 0
   m_Name: SourceReceiver
   m_TagString: Untagged
@@ -2130,9 +2131,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1738592034}
+  - component: {fileID: 1738592035}
   - component: {fileID: 1738592038}
   - component: {fileID: 1738592037}
-  - component: {fileID: 1738592035}
   m_Layer: 0
   m_Name: SourceReceiver (2)
   m_TagString: Untagged
@@ -2288,9 +2289,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1807963735}
+  - component: {fileID: 1807963740}
   - component: {fileID: 1807963739}
   - component: {fileID: 1807963738}
-  - component: {fileID: 1807963740}
   m_Layer: 0
   m_Name: QualityChecker
   m_TagString: Untagged
@@ -2417,9 +2418,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1850284335}
+  - component: {fileID: 1850284339}
   - component: {fileID: 1850284338}
   - component: {fileID: 1850284337}
-  - component: {fileID: 1850284339}
   m_Layer: 0
   m_Name: FlowSplitter
   m_TagString: Untagged
@@ -2651,9 +2652,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2053966388}
+  - component: {fileID: 2053966389}
   - component: {fileID: 2053966387}
   - component: {fileID: 2053966386}
-  - component: {fileID: 2053966389}
   m_Layer: 0
   m_Name: Convey
   m_TagString: Untagged

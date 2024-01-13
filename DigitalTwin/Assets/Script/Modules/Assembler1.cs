@@ -18,7 +18,7 @@ public class Assembler1 : MonoBehaviour, Receiver
     void Receiver.ReceiveResource(GameObject Resource){
         if (Resource.CompareTag("Resource"))
         {
-            if (Resource.GetComponent<Base>() != null && Resource.GetComponent<Composite1>() == null)
+            if (Resource.GetComponent<Base>())
             {
                 Resource.SetActive(false);
                 _baseCollected.Enqueue(Resource);
@@ -27,6 +27,8 @@ public class Assembler1 : MonoBehaviour, Receiver
                 {
                     StartCoroutine(AssembleAndSend());
                 }
+            }else{
+                _convey.GetComponent<Receiver>().ReceiveResource(Resource);
             }
         }
     }

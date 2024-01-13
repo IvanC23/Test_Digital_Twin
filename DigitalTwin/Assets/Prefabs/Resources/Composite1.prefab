@@ -146,8 +146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myMaterial: {fileID: 2100000, guid: 7cb5163c4e79a5b4fa02c67a1b015194, type: 2}
   _myID: 
-  _x: 0
   _myColor: {r: 0, g: 0, b: 0, a: 0}
+  _x: 0
 --- !u!1 &4160950260841966603
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,5 +246,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myMaterial: {fileID: 2100000, guid: 7cb5163c4e79a5b4fa02c67a1b015194, type: 2}
   _myID: 
-  _x: 0
   _myColor: {r: 0, g: 0, b: 0, a: 0}
+  _x: 0
