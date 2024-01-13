@@ -22,7 +22,7 @@ public class Composite2 : MonoBehaviour,HeightSender
     }
     public float GetHeight()
     {
-        return _body.GetHeight() + _composite1.GetHeight();
+        return _composite1.GetHeight();
     }
 
     public void SetComponents(Body body, Composite1 composite1)

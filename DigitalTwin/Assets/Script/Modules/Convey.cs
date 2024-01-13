@@ -23,6 +23,7 @@ public class Convey : MonoBehaviour, Receiver
         {
             Vector3 start = _startPosition.position;
             Vector3 positionPlusOffset = new Vector3(start.x, start.y + Resource.GetComponent<HeightSender>().GetHeight()/2, start.z);
+            Debug.Log("Sending " + Resource.gameObject + " with offset " + positionPlusOffset.y);
 
             Resource.transform.position = positionPlusOffset;
             Resource.transform.rotation = transform.rotation;
@@ -46,8 +47,10 @@ public class Convey : MonoBehaviour, Receiver
     private void MoveObject(GameObject obj)
     {
         float step = _speedMeterPerSecond * Time.deltaTime;
-        obj.transform.position = Vector3.MoveTowards(obj.transform.position, _endPosition.position, step);
-        if (obj.transform.position == _endPosition.position)
+        Vector3 targetPosition = _endPosition.position;
+        targetPosition.y = obj.transform.position.y;
+        obj.transform.position = Vector3.MoveTowards(obj.transform.position, targetPosition, step);
+        if (obj.transform.position == targetPosition)
         {
             _resourceToMove.Remove(obj);
             obj.transform.position = _nextComponentPosition.position;
