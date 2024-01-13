@@ -390,6 +390,7 @@
 "Assets/Script/Resources/Interfaces/HeightSender.cs"
 "Assets/Script/Resources/ResourceTypes.cs"
 "Assets/Script/Utility/TimeManager.cs"
+"Assets/Script/Utility/UIManager.cs"
 -langversion:9.0
 
 /deterministic
