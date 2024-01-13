@@ -24,7 +24,7 @@ public class Assembler1 : MonoBehaviour, Receiver
                 Resource.SetActive(false);
                 _baseCollected.Enqueue(Resource);
 
-                if (_baseCollected.Count >= _baseNeeded)
+                if (CheckToAssemble())
                 {
                     StartCoroutine(AssembleAndSend());
                 }
@@ -34,6 +34,18 @@ public class Assembler1 : MonoBehaviour, Receiver
                 Debug.LogError("A resource not needed is passing through " + gameObject.name);
                 _convey.GetComponent<Receiver>().ReceiveResource(Resource);
             }
+        }
+    }
+
+    bool CheckToAssemble()
+    {
+        if (_baseCollected.Count >= _baseNeeded)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

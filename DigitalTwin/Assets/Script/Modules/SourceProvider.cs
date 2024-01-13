@@ -50,6 +50,17 @@ public class SourceProvider : MonoBehaviour
             instantiatedResource.GetComponent<Body>().SetKeyAttribute(Y: Y);
             _convey.GetComponent<Receiver>().ReceiveResource(instantiatedResource);
         }
+        else if (_selectedResource == ResourceTypes.Resources.Detail)
+        {
+            string uniqueID = GenerateRandomAlphanumericCode(6);
+            float Z = Random.Range(-30, 31);
+            Color randomColor = new Color(Random.value, Random.value, Random.value);
+
+            GameObject instantiatedResource = Instantiate(_selectedResourcePrefab);
+            instantiatedResource.GetComponent<Detail>().SetCommonValues(ID: uniqueID, Color: randomColor);
+            instantiatedResource.GetComponent<Detail>().SetKeyAttribute(Z: Z);
+            _convey.GetComponent<Receiver>().ReceiveResource(instantiatedResource);
+        }
     }
     private string GenerateRandomAlphanumericCode(int length)
     {

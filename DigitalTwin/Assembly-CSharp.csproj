@@ -53,6 +53,9 @@
      <Compile Include="Assets\Script\Resources\Body.cs" />
      <Compile Include="Assets\Script\Modules\Assemblers\Assembler2.cs" />
      <Compile Include="Assets\Script\Resources\Composite\Composite2.cs" />
+     <Compile Include="Assets\Script\Resources\Detail.cs" />
+     <Compile Include="Assets\Script\Resources\Composite\Composite3.cs" />
+     <Compile Include="Assets\Script\Modules\Assemblers\Assembler3.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

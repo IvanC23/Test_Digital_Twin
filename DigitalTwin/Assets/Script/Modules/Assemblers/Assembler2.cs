@@ -84,9 +84,4 @@ public class Assembler2 : MonoBehaviour, Receiver
         Destroy(composite1);
         Destroy(body);
     }
-
-
-
-
-
 }
