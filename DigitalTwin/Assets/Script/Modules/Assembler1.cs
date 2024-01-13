@@ -43,8 +43,8 @@ public class Assembler1 : MonoBehaviour, Receiver
 
         Composite1 compositeComponent = instantiatedResource.GetComponent<Composite1>();
 
-        compositeComponent.SetValuesBase1(_base1.GetID(), _base1.GetX(), _base1.GetColor());
-        compositeComponent.SetValuesBase2(_base2.GetID(), _base2.GetX(), _base2.GetColor());
+        compositeComponent.SetValuesBase1(_base1.GetID(), _base1.GetKeyAttribute(), _base1.GetColor());
+        compositeComponent.SetValuesBase2(_base2.GetID(), _base2.GetKeyAttribute(), _base2.GetColor());
 
         _convey.GetComponent<Receiver>().ReceiveResource(instantiatedResource);
 

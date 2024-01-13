@@ -11,7 +11,7 @@ public class QualityChecker : MonoBehaviour,Receiver
      void Receiver.ReceiveResource(GameObject Resource){
         if (Resource.CompareTag("Resource"))
         {
-            if (Resource.GetComponentsInChildren<Base>()[0].GetX() + Resource.GetComponentsInChildren<Base>()[1].GetX() > 100)
+            if (Resource.GetComponentsInChildren<Base>()[0].GetKeyAttribute() + Resource.GetComponentsInChildren<Base>()[1].GetKeyAttribute() > 100)
             {
                 RepositionResourceSuccess(Resource);
             }

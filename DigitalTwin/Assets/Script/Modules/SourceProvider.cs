@@ -34,7 +34,8 @@ public class SourceProvider : MonoBehaviour
             Color randomColor = new Color(Random.value, Random.value, Random.value);
 
             GameObject instantiatedResource = Instantiate(_selectedResourcePrefab);
-            instantiatedResource.GetComponent<Base>().SetValues(ID: uniqueID, X: X, Color: randomColor);
+            instantiatedResource.GetComponent<Base>().SetCommonValues(ID: uniqueID, Color: randomColor);
+            instantiatedResource.GetComponent<Base>().SetKeyAttribute(X: X);
             _convey.GetComponent<Receiver>().ReceiveResource(instantiatedResource);
         }
     }

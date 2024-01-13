@@ -378,6 +378,7 @@
 "Assets/Script/Modules/QualityChecker.cs"
 "Assets/Script/Modules/SourceProvider.cs"
 "Assets/Script/Modules/SourceReceiver.cs"
+"Assets/Script/Resources/AbstractResource.cs"
 "Assets/Script/Resources/Base.cs"
 "Assets/Script/Resources/Composite1.cs"
 "Assets/Script/Resources/Interfaces/HeightSender.cs"

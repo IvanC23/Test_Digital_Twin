@@ -2,46 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Base : MonoBehaviour,HeightSender
+public class Base : AbstractResource
 {
-    [Header("Parametri necessari")]
-    [SerializeField] Material _myMaterial;
-    private Material _myMaterialInstance;
-
-
-    [Header("Parametri da non modificare, solo per visualizzare da Editor")]
-    [SerializeField] private string _myID;
+    [Header("Attributo chiave, solo per visualizzazione")]
     [SerializeField] private float _x;
-    [SerializeField] private Color _myColor;
-
-    public void SetValues(string ID, float X, Color Color)
-    {
-        _myID = ID;
+    public void SetKeyAttribute(float X){
         _x = X;
-        _myColor = Color;
-
-        _myMaterialInstance = new Material(_myMaterial)
-        {
-            color = Color
-        };
-
-        GetComponent<Renderer>().material = _myMaterialInstance;
     }
-    public float GetX()
-    {
+    public float GetKeyAttribute(){
         return _x;
     }
-    public string GetID()
-    {
-        return _myID;
-    }
-    public Color GetColor()
-    {
-        return _myColor;
-    }
-    public float GetHeight(){
-        return transform.localScale.y;
-    }
-
-
+    
 }
