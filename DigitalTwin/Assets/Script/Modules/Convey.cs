@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Convey : MonoBehaviour, Receiver
 {
     [Header("Parametri necessari")]
     [SerializeField] private Transform _startPosition;
     [SerializeField] private Transform _endPosition;
+    [SerializeField] private TextMeshPro _speedText;
     [SerializeField] private Transform _nextComponentPosition;
 
     [Header("Parametri configurabili")]
@@ -16,6 +18,9 @@ public class Convey : MonoBehaviour, Receiver
 
     private List<GameObject> _resourceToMove = new List<GameObject>();
 
+    void Awake(){
+        _speedText.text = "Speed :" + _speedMeterPerSecond + "m/s";
+    }
 
     void Receiver.ReceiveResource(GameObject Resource)
     {

@@ -7,6 +7,12 @@ public class UIManager : MonoBehaviour
     [Header("Parametri necessari")]
     [SerializeField] private GameObject _detailPanel;
     [SerializeField] private GameObject _suggestions;
+    [SerializeField] private GameObject _welcomePanel;
+
+    void Awake()
+    {
+        TimeManager.SimulationStarted += OnSimulationStarted;
+    }
 
     void Update()
     {
@@ -19,4 +25,15 @@ public class UIManager : MonoBehaviour
             _suggestions.SetActive(!_suggestions.activeSelf);
         }
     }
+
+    void OnDestroy()
+    {
+        TimeManager.SimulationStarted -= OnSimulationStarted;
+    }
+
+    private void OnSimulationStarted()
+    {
+        _welcomePanel.SetActive(false);
+    }
+
 }

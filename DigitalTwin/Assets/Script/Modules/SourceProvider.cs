@@ -27,6 +27,7 @@ public class SourceProvider : MonoBehaviour
 
     void Awake()
     {
+        TimeManager.SimulationStarted += OnSimulationStarted;
 
         _selectedResourcePrefab = _resourcesPrefabs[(int)_selectedResource];
 
@@ -36,8 +37,19 @@ public class SourceProvider : MonoBehaviour
         _creationTime.text = "Creation time: " + _timeToSpawn + "s";
         _unitsProduced.text = "Units created: " + _countUnits.ToString();
 
+    }
+
+    void OnDestroy()
+    {
+        TimeManager.SimulationStarted -= OnSimulationStarted;
+    }
+
+    private void OnSimulationStarted()
+    {
         InvokeRepeating("SpawnResourceAtInterval", 0f, _timeToSpawn);
     }
+
+
 
     private void SpawnResourceAtInterval()
     {

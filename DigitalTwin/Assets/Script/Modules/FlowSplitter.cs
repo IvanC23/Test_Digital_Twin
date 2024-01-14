@@ -52,8 +52,6 @@ public class FlowSplitter : MonoBehaviour, Receiver
         }
     }
 
-
-
     public void RepositionResource(GameObject resource)
     {
         //Calcolo della probabilità che esca su un determinato canale tramite media ponderata e poi lo sposta sul canale
@@ -79,7 +77,7 @@ public class FlowSplitter : MonoBehaviour, Receiver
                     _countUnitPassed2++;
                     _unitPassedConvey2.text = "Units passed through 2: " + _countUnitPassed2;
                 }
-                
+
                 float percentage1 = (float)_countUnitPassed1 / (_countUnitPassed1 + _countUnitPassed2) * 100;
                 float percentage2 = (float)_countUnitPassed2 / (_countUnitPassed1 + _countUnitPassed2) * 100;
 
