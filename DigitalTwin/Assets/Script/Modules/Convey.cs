@@ -24,9 +24,6 @@ public class Convey : MonoBehaviour, Receiver
             Vector3 start = _startPosition.position;
             Vector3 positionPlusOffset = new Vector3(start.x, start.y + Resource.GetComponent<HeightSender>().GetHeight() / 2, start.z);
 
-            Vector3 targetPosition = _endPosition.position;
-            targetPosition.y = Resource.transform.position.y;
-
             Resource.transform.position = positionPlusOffset;
             Resource.transform.rotation = transform.rotation;
             _resourceToMove.Add(Resource);
