@@ -55,7 +55,7 @@ public class Assembler1 : MonoBehaviour, Receiver
             }
             else
             {
-                Debug.LogError("A resource not needed is passing through " + gameObject.name);
+                //Debug.LogError("A resource not needed is passing through " + gameObject.name);
                 _convey.GetComponent<Receiver>().ReceiveResource(Resource);
             }
         }

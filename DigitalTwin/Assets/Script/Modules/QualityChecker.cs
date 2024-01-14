@@ -50,8 +50,10 @@ public class QualityChecker : MonoBehaviour, Receiver
             }
             else
             {
-                Debug.LogError("Assicurati che i moduli siano posizionati correttamente, un Quality Checker ha ispezionate un oggetto per il quale non era predisposto");
-                Destroy(Resource);
+                //ALTERNATIVA CON APPROCCIO PIU' CONSERVATIVO IN CUI SI DISTRUGGE CIO' CHE NON RISPETTA LA CATENA
+                //Debug.LogError("Assicurati che i moduli siano posizionati correttamente, un Quality Checker ha ispezionate un oggetto per il quale non era predisposto");
+                //Destroy(Resource);
+                RepositionResourceFail(Resource);
             }
         }
     }

@@ -100,4 +100,38 @@ public class SourceProvider : MonoBehaviour
     {
         return _charForBodyKey[Random.Range(0, 3)];
     }
+    public float GetTimeToSpawn()
+    {
+        return _timeToSpawn;
+    }
+    public void SetNewTimeToSpawn(float NewValue)
+    {
+        _timeToSpawn = NewValue;
+        _creationTime.text = "Creation time: " + _timeToSpawn + "s";
+        CancelInvoke("SpawnResourceAtInterval");
+        InvokeRepeating("SpawnResourceAtInterval", 0f, _timeToSpawn);
+    }
+    public int GetResourceSelected()
+    {
+        return (int)_selectedResource;
+    }
+    public void SetNewResourceToProduce(int index)
+    {
+        if (index == 0)
+        {
+            _selectedResource = ResourceTypes.Resources.Base;
+        }
+        else if (index == 1)
+        {
+            _selectedResource = ResourceTypes.Resources.Body;
+        }
+        else if (index == 2)
+        {
+            _selectedResource = ResourceTypes.Resources.Detail;
+        }
+        _selectedResourcePrefab = _resourcesPrefabs[(int)_selectedResource];
+
+        _creationType.text = "Creating: " + _selectedResource;
+
+    }
 }
