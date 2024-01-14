@@ -487,7 +487,7 @@ PrefabInstance:
       objectReference: {fileID: 1220237546}
     - target: {fileID: 2787510603604833713, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2787510603604833713, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_LocalScale.x
@@ -539,7 +539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2787510603604833717, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_Name
-      value: FromSplitter2
+      value: FromSplitter1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
@@ -589,8 +589,8 @@ Transform:
   - {fileID: 1088368984}
   - {fileID: 153492451}
   - {fileID: 5146665768320583851}
-  - {fileID: 1501956474}
   - {fileID: 334812589}
+  - {fileID: 1501956474}
   - {fileID: 1898030936}
   - {fileID: 1756716791}
   - {fileID: 524782575}
@@ -3347,7 +3347,7 @@ PrefabInstance:
       objectReference: {fileID: 1898030936}
     - target: {fileID: 2787510603604833713, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2787510603604833713, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_LocalScale.x
@@ -3395,7 +3395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2787510603604833717, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_Name
-      value: FromSplitter1
+      value: FromSplitter2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
@@ -4429,11 +4429,11 @@ PrefabInstance:
     - target: {fileID: 5579858486605468801, guid: 84a541fce530f4244bbae457c7527c2a, type: 3}
       propertyPath: _conveysWithWeight.Array.data[0]._convey
       value: 
-      objectReference: {fileID: 1407987010}
+      objectReference: {fileID: 109823200}
     - target: {fileID: 5579858486605468801, guid: 84a541fce530f4244bbae457c7527c2a, type: 3}
       propertyPath: _conveysWithWeight.Array.data[1]._convey
       value: 
-      objectReference: {fileID: 109823200}
+      objectReference: {fileID: 1407987010}
     - target: {fileID: 5579858486605468828, guid: 84a541fce530f4244bbae457c7527c2a, type: 3}
       propertyPath: m_Name
       value: FlowSplitter

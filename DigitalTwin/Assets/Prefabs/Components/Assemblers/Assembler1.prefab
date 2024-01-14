@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7795600608053607650}
   - component: {fileID: 4992065052446069649}
   m_Layer: 0
-  m_Name: TimeToAssemble
+  m_Name: UnitsInside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,8 +127,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -299,8 +299,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -471,8 +471,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -568,10 +568,10 @@ MonoBehaviour:
   _composite1Prefab: {fileID: 2083297220227744326, guid: 1ba11007f4d49024280b8b420f1ae0b8, type: 3}
   _nameText: {fileID: 5458312283848331858}
   _moduleType: {fileID: 2452273784594540006}
-  _unitsInside: {fileID: 8881500359887776498}
-  _creationTime: {fileID: 4992065052446069649}
+  _creationTime: {fileID: 3558701724186658941}
   _unitsNeeded: {fileID: 5560085746364836354}
-  _unitsProduced: {fileID: 3558701724186658941}
+  _unitsInside: {fileID: 4992065052446069649}
+  _unitsProduced: {fileID: 8881500359887776498}
 --- !u!33 &2690895894399308930
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -749,8 +749,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: 5025874276327613585}
   - component: {fileID: 8881500359887776498}
   m_Layer: 0
-  m_Name: UnitsInside
+  m_Name: UnitsCreated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -958,8 +958,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1015,7 +1015,7 @@ GameObject:
   - component: {fileID: 292968586632513233}
   - component: {fileID: 3558701724186658941}
   m_Layer: 0
-  m_Name: UnitsAssembled
+  m_Name: TimeToAssemble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1130,8 +1130,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

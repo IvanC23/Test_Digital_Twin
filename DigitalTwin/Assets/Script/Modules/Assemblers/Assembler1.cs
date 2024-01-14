@@ -15,9 +15,9 @@ public class Assembler1 : MonoBehaviour, Receiver
     [SerializeField] private GameObject _composite1Prefab;
     [SerializeField] private TextMeshPro _nameText;
     [SerializeField] private TextMeshPro _moduleType;
-    [SerializeField] private TextMeshPro _unitsInside;
     [SerializeField] private TextMeshPro _creationTime;
     [SerializeField] private TextMeshPro _unitsNeeded;
+    [SerializeField] private TextMeshPro _unitsInside;
     [SerializeField] private TextMeshPro _unitsProduced;
     private Queue<GameObject> _baseCollected = new Queue<GameObject>();
     private int _baseNeeded = 2;
@@ -29,9 +29,10 @@ public class Assembler1 : MonoBehaviour, Receiver
         _nameText.text = "Name: " + gameObject.name;
         _moduleType.text = "Type: Assembler1";
         _creationTime.text = "Creation time: " + _timeToAssemble + "s";
+        _unitsNeeded.text = "Bases needed: " + _baseNeeded.ToString();
+        _unitsInside.text = "Bases inside: " + _countUnitsInside.ToString();
         _unitsProduced.text = "Units created: " + _countUnitsProduced.ToString();
-        _unitsNeeded.text = "Units needed: " + _baseNeeded.ToString();
-        _unitsInside.text = "Units inside: " + _countUnitsInside.ToString();
+
     }
 
 
@@ -45,7 +46,7 @@ public class Assembler1 : MonoBehaviour, Receiver
                 _baseCollected.Enqueue(Resource);
 
                 _countUnitsInside++;
-                _unitsInside.text = "Units inside: " + _countUnitsInside.ToString();
+                _unitsInside.text = "Bases inside: " + _countUnitsInside.ToString();
 
                 if (CheckToAssemble())
                 {
@@ -77,9 +78,6 @@ public class Assembler1 : MonoBehaviour, Receiver
         GameObject base1 = _baseCollected.Dequeue();
         GameObject base2 = _baseCollected.Dequeue();
 
-        _countUnitsInside-=2;
-        _unitsInside.text = "Units inside: " + _countUnitsInside.ToString();
-
         yield return new WaitForSecondsRealtime(_timeToAssemble);
 
         GameObject instantiatedResource = Instantiate(_composite1Prefab);
@@ -89,6 +87,9 @@ public class Assembler1 : MonoBehaviour, Receiver
         compositeComponent.SetComponents(base1.GetComponent<Base>(), base2.GetComponent<Base>());
 
         _convey.GetComponent<Receiver>().ReceiveResource(instantiatedResource);
+
+        _countUnitsInside -= 2;
+        _unitsInside.text = "Bases inside: " + _countUnitsInside.ToString();
 
         _countUnitsProduced++;
         _unitsProduced.text = "Units created: " + _countUnitsProduced.ToString();
