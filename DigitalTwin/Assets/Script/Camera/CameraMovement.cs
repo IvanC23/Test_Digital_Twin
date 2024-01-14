@@ -63,7 +63,7 @@ public class CameraMovement : MonoBehaviour
                     _moveSpeed *= 2f;
 
                     transform.Rotate(90f, 0f, 0f);
-                    transform.position += UnityEngine.Vector3.up * 9.0f;
+                    transform.position += UnityEngine.Vector3.up * 7.0f;
 
                     _isOnTopView = !_isOnTopView;
 

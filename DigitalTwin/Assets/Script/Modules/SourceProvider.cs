@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class SourceProvider : MonoBehaviour
 {
@@ -12,15 +13,28 @@ public class SourceProvider : MonoBehaviour
     [Header("Parametri necessari")]
     [SerializeField] private Convey _convey;
     [SerializeField] private List<GameObject> _resourcesPrefabs;
+    [SerializeField] private TextMeshPro _nameText;
+    [SerializeField] private TextMeshPro _moduleType;
+    [SerializeField] private TextMeshPro _creationType;
+    [SerializeField] private TextMeshPro _creationTime;
+    [SerializeField] private TextMeshPro _unitsProduced;
+
     private char[] _charForBodyKey = { 'A', 'B', 'C' };
     private GameObject _selectedResourcePrefab;
     const string CARATTERI = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    private int _countUnits = 0;
 
 
     void Awake()
     {
 
         _selectedResourcePrefab = _resourcesPrefabs[(int)_selectedResource];
+
+        _nameText.text = "Name: " + gameObject.name;
+        _moduleType.text = "Type: SourceProvider";
+        _creationType.text = "Creating: " + _selectedResource;
+        _creationTime.text = "Creation time: " + _timeToSpawn + "s";
+        _unitsProduced.text = "Units created: " + _countUnits.ToString();
 
         InvokeRepeating("SpawnResourceAtInterval", 0f, _timeToSpawn);
     }
@@ -61,6 +75,9 @@ public class SourceProvider : MonoBehaviour
             instantiatedResource.GetComponent<Detail>().SetKeyAttribute(Z: Z);
             _convey.GetComponent<Receiver>().ReceiveResource(instantiatedResource);
         }
+
+        _countUnits++;
+        _unitsProduced.text = "Units created: " + _countUnits.ToString();
     }
     private string GenerateRandomAlphanumericCode(int length)
     {
