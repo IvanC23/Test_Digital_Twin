@@ -36,7 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\Modules\Assemblers\IAssembler.cs" />
+     <Compile Include="Assets\Script\Modules\Assemblers\Old\IAssembler.cs" />
      <Compile Include="Assets\Script\Modules\Buffer.cs" />
      <Compile Include="Assets\Script\Resources\Body.cs" />
      <Compile Include="Assets\Script\Modules\QualityChecker.cs" />
@@ -51,15 +51,17 @@
      <Compile Include="Assets\Script\Resources\AbstractResource.cs" />
      <Compile Include="Assets\Script\Utility\UIManager.cs" />
      <Compile Include="Assets\Script\Resources\Base.cs" />
-     <Compile Include="Assets\Script\Modules\Assemblers\Assembler1.cs" />
-     <Compile Include="Assets\Script\Modules\Assemblers\Assembler3.cs" />
+     <Compile Include="Assets\Script\Modules\Assemblers\Old\Assembler1.cs" />
+     <Compile Include="Assets\Script\Modules\Assemblers\Old\Assembler3.cs" />
      <Compile Include="Assets\Script\Modules\SourceReceiver.cs" />
      <Compile Include="Assets\Script\Utility\TimeManager.cs" />
-     <Compile Include="Assets\Script\Modules\Assemblers\Assembler2.cs" />
+     <Compile Include="Assets\Script\Modules\Assemblers\Old\Assembler2.cs" />
      <Compile Include="Assets\Script\Camera\CameraMovement.cs" />
      <Compile Include="Assets\Script\Resources\Interfaces\HeightSender.cs" />
      <Compile Include="Assets\Script\Resources\Composite\Composite3.cs" />
      <Compile Include="Assets\Script\Modules\Interfaces\Receiver.cs" />
+     <Compile Include="Assets\Script\Modules\Assemblers\Assembler.cs" />
+     <Compile Include="Assets\Script\Modules\Assemblers\EnumAssembler.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

@@ -30,7 +30,7 @@ public class QualityChecker : MonoBehaviour, Receiver
     {
         if (Resource.CompareTag("Resource"))
         {
-            if (Resource.GetComponentInChildren<Base>() != null)
+            if (Resource.GetComponentsInChildren<Base>().Length > 1)
             {
                 if (Resource.GetComponentsInChildren<Base>()[0].GetKeyAttribute() + Resource.GetComponentsInChildren<Base>()[1].GetKeyAttribute() > 100)
                 {

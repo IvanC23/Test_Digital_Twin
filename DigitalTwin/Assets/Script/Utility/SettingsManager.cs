@@ -116,7 +116,7 @@ public class SettingsManager : MonoBehaviour
         }
         _assemblersDropDown.AddOptions(objectNames);
 
-        _timeToAssemble.text = _assemblersList[0].GetComponent<IAssembler>().GetAssembleTime().ToString();
+        _timeToAssemble.text = _assemblersList[0].GetComponent<Assembler>().GetAssembleTime().ToString();
 
     }
 
@@ -340,7 +340,7 @@ public class SettingsManager : MonoBehaviour
         int selectedIndex = _assemblersDropDown.value;
         GameObject selectedObject = _assemblersList[selectedIndex];
 
-        _timeToAssemble.text = selectedObject.GetComponent<IAssembler>().GetAssembleTime().ToString();
+        _timeToAssemble.text = selectedObject.GetComponent<Assembler>().GetAssembleTime().ToString();
     }
 
     public void ChangeAssembleTime()
@@ -354,7 +354,7 @@ public class SettingsManager : MonoBehaviour
             {
                 if (parsedValue > 0)
                 {
-                    _assemblersList[selectedIndex].GetComponent<IAssembler>().SetAssembleTime(parsedValue);
+                    _assemblersList[selectedIndex].GetComponent<Assembler>().SetAssembleTime(parsedValue);
                 }
             }
             else
