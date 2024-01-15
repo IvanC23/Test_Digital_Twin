@@ -2564,6 +2564,12 @@ MonoBehaviour:
   _timeToBuff: {fileID: 898729791}
   _buffersList:
   - {fileID: 1452670188}
+  _assemblersDropDown: {fileID: 2008804929}
+  _timeToAssemble: {fileID: 898729791}
+  _assemblersList:
+  - {fileID: 1077970111}
+  - {fileID: 381742794}
+  - {fileID: 719563867}
 --- !u!1001 &327453990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3245,6 +3251,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361764242}
   m_CullTransparentMesh: 1
+--- !u!1 &381742794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 365568689001678137, guid: 5c493da5332c1b74991f64470bdfa25e, type: 3}
+  m_PrefabInstance: {fileID: 1220237545}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &386767008 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2787510603604833713, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
@@ -6301,7 +6312,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: SelectProvider
+        m_MethodName: SelectAssembler
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6632,6 +6643,11 @@ RectTransform:
   m_AnchoredPosition: {x: 915, y: -407}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &719563867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1928018389850348638, guid: 1f8c3ba86e36fc143a8c91fe13107e9e, type: 3}
+  m_PrefabInstance: {fileID: 1046540802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &730632721
 GameObject:
   m_ObjectHideFlags: 0
@@ -7774,7 +7790,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: ChangeTimeToSpawnProvider
+        m_MethodName: OnAssembleTimeChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7804,7 +7820,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: ChangeTimeToSpawnProvider
+        m_MethodName: OnAssembleTimeChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9558,6 +9574,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1928018389850348639, guid: 1f8c3ba86e36fc143a8c91fe13107e9e, type: 3}
   m_PrefabInstance: {fileID: 1046540802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1077970111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2690895894399308990, guid: c0ef7ebfbfc9c7b40bd8bcb0ba3b4cd3, type: 3}
+  m_PrefabInstance: {fileID: 1088368983}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1078181319
 GameObject:

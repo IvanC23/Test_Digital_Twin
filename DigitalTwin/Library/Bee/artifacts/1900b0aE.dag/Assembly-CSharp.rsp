@@ -373,6 +373,7 @@
 "Assets/Script/Modules/Assemblers/Assembler1.cs"
 "Assets/Script/Modules/Assemblers/Assembler2.cs"
 "Assets/Script/Modules/Assemblers/Assembler3.cs"
+"Assets/Script/Modules/Assemblers/IAssembler.cs"
 "Assets/Script/Modules/Buffer.cs"
 "Assets/Script/Modules/Convey.cs"
 "Assets/Script/Modules/FlowSplitter.cs"

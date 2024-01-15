@@ -59,6 +59,7 @@
      <Compile Include="Assets\Script\Resources\Interfaces\HeightSender.cs" />
      <Compile Include="Assets\Script\Resources\Composite\Composite3.cs" />
      <Compile Include="Assets\Script\Modules\Interfaces\Receiver.cs" />
+     <Compile Include="Assets\Script\Modules\Assemblers\IAssembler.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

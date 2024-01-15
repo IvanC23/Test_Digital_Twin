@@ -5,7 +5,7 @@ using UnityEngine;
 using TMPro;
 
 
-public class Assembler1 : MonoBehaviour, Receiver
+public class Assembler1 : MonoBehaviour, Receiver, IAssembler
 {
     [Header("Parametri configurabili")]
     [SerializeField] private float _timeToAssemble = 2.0f;
@@ -97,5 +97,15 @@ public class Assembler1 : MonoBehaviour, Receiver
 
         Destroy(base1);
         Destroy(base2);
+    }
+
+    public float GetAssembleTime()
+    {
+        return _timeToAssemble;
+    }
+    public void SetAssembleTime(float NewTime)
+    {
+        _timeToAssemble = NewTime;
+        _creationTime.text = "Creation time: " + _timeToAssemble + "s";
     }
 }

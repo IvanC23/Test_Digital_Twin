@@ -21,10 +21,16 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private TMP_Dropdown _conveysDropDown;
     [SerializeField] private TMP_InputField _speed;
     [SerializeField] private List<GameObject> _conveysList = new List<GameObject>();
+
     [Header("Sezione buffers")]
     [SerializeField] private TMP_Dropdown _buffersDropDown;
     [SerializeField] private TMP_InputField _timeToBuff;
     [SerializeField] private List<GameObject> _buffersList = new List<GameObject>();
+
+    [Header("Sezione assemblers")]
+    [SerializeField] private TMP_Dropdown _assemblersDropDown;
+    [SerializeField] private TMP_InputField _timeToAssemble;
+    [SerializeField] private List<GameObject> _assemblersList = new List<GameObject>();
 
     private void Start()
     {
@@ -90,6 +96,19 @@ public class SettingsManager : MonoBehaviour
         _buffersDropDown.AddOptions(objectNames);
 
         _timeToBuff.text = _buffersList[0].GetComponent<Buffer>().GetTimeToBuff().ToString();
+
+        //ASSEMBLERS SECTION
+
+        _assemblersDropDown.ClearOptions();
+
+        objectNames = new List<string>();
+        foreach (GameObject obj in _assemblersList)
+        {
+            objectNames.Add(obj.name);
+        }
+        _assemblersDropDown.AddOptions(objectNames);
+
+        _timeToAssemble.text = _assemblersList[0].GetComponent<IAssembler>().GetAssembleTime().ToString();
 
     }
 
@@ -234,6 +253,34 @@ public class SettingsManager : MonoBehaviour
                 {
                     _buffersList[selectedIndex].GetComponent<Buffer>().SetTimeToBuff(parsedValue);
                     _timeToBuff.text = _buffersList[selectedIndex].GetComponent<Buffer>().GetTimeToBuff().ToString();
+                }
+            }
+        }
+    }
+
+    //ASSEMBLERS SECTION
+
+    public void SelectAssembler()
+    {
+        int selectedIndex = _assemblersDropDown.value;
+        GameObject selectedObject = _assemblersList[selectedIndex];
+
+        _timeToAssemble.text = selectedObject.GetComponent<IAssembler>().GetAssembleTime().ToString();
+    }
+
+    public void OnAssembleTimeChange()
+    {
+        // Aggiorna il parametro 1 dell'oggetto selezionato quando l'input cambia
+        int selectedIndex = _assemblersDropDown.value;
+        if (selectedIndex >= 0 && selectedIndex < _assemblersList.Count)
+        {
+            float parsedValue;
+            if (float.TryParse(_timeToAssemble.text, out parsedValue))
+            {
+                if (parsedValue > 0)
+                {
+                    _assemblersList[selectedIndex].GetComponent<IAssembler>().SetAssembleTime(parsedValue);
+                    _timeToAssemble.text = _assemblersList[selectedIndex].GetComponent<IAssembler>().GetAssembleTime().ToString();
                 }
             }
         }
