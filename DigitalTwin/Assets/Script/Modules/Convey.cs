@@ -12,13 +12,14 @@ public class Convey : MonoBehaviour, Receiver
     [SerializeField] private Transform _nextComponentPosition;
 
     [Header("Parametri configurabili")]
-    [SerializeField] private float _speedMeterPerSecond = 1f;
+    [SerializeField] private float _speedMeterPerSecond = 3f;
 
 
 
     private List<GameObject> _resourceToMove = new List<GameObject>();
 
-    void Awake(){
+    void Awake()
+    {
         _speedText.text = "Speed :" + _speedMeterPerSecond + "m/s";
     }
 
@@ -60,6 +61,16 @@ public class Convey : MonoBehaviour, Receiver
             obj.transform.position = _nextComponentPosition.position;
             _nextComponentPosition.gameObject.GetComponent<Receiver>().ReceiveResource(obj);
         }
+    }
+
+    public float GetSpeed()
+    {
+        return _speedMeterPerSecond;
+    }
+    public void SetSpeed(float NewSpeed)
+    {
+        _speedMeterPerSecond = NewSpeed;
+        _speedText.text = "Speed :" + _speedMeterPerSecond + "m/s";
     }
 
 }

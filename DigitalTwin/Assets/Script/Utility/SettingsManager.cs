@@ -17,6 +17,11 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private TMP_InputField _weight2;
     [SerializeField] private List<GameObject> _flowSplittersList = new List<GameObject>();
 
+    [Header("Sezione conveys")]
+    [SerializeField] private TMP_Dropdown _conveysDropDown;
+    [SerializeField] private TMP_InputField _speed;
+    [SerializeField] private List<GameObject> _conveysList = new List<GameObject>();
+
     private void Start()
     {
         PopulateDropdowns();
@@ -55,6 +60,19 @@ public class SettingsManager : MonoBehaviour
 
         _weight1.text = _flowSplittersList[0].GetComponent<FlowSplitter>().GetWeight(0).ToString();
         _weight2.text = _flowSplittersList[0].GetComponent<FlowSplitter>().GetWeight(1).ToString();
+
+        //CONVEYS SECTION
+
+        _conveysDropDown.ClearOptions();
+
+        objectNames = new List<string>();
+        foreach (GameObject obj in _conveysList)
+        {
+            objectNames.Add(obj.name);
+        }
+        _conveysDropDown.AddOptions(objectNames);
+
+        _speed.text = _conveysList[0].GetComponent<Convey>().GetSpeed().ToString();
 
     }
 
@@ -143,6 +161,34 @@ public class SettingsManager : MonoBehaviour
 
                     _weight1.text = _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().GetWeight(0).ToString();
                     _weight2.text = _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().GetWeight(1).ToString();
+                }
+            }
+        }
+    }
+
+    //CONVEY SECTION
+
+    public void SelectConvey()
+    {
+        int selectedIndex = _conveysDropDown.value;
+        GameObject selectedObject = _conveysList[selectedIndex];
+
+        _speed.text = selectedObject.GetComponent<Convey>().GetSpeed().ToString();
+    }
+
+    public void OnSpeedChange()
+    {
+        // Aggiorna il parametro 1 dell'oggetto selezionato quando l'input cambia
+        int selectedIndex = _conveysDropDown.value;
+        if (selectedIndex >= 0 && selectedIndex < _conveysList.Count)
+        {
+            float parsedValue;
+            if (float.TryParse(_speed.text, out parsedValue))
+            {
+                if (parsedValue > 0)
+                {
+                    _conveysList[selectedIndex].GetComponent<Convey>().SetSpeed(parsedValue);
+                    _speed.text = _conveysList[selectedIndex].GetComponent<Convey>().GetSpeed().ToString();
                 }
             }
         }
