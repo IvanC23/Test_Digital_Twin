@@ -236,7 +236,7 @@ public class SettingsManager : MonoBehaviour
                 {
                     _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().SetWeight2(parsedValue);
 
-                    _weight2.text = _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().GetWeight(1).ToString();
+                    _weight1.text = _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().GetWeight(0).ToString();
                 }
             }
             else

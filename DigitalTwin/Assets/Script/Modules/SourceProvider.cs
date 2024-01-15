@@ -55,53 +55,80 @@ public class SourceProvider : MonoBehaviour
 
     private void SpawnResourceAtInterval()
     {
+        //Funzione chiamata ogni _timeToSpawn per generare una risorsa
+        //I vari branch sono gestiti in maniera analoga
 
-        if (_selectedResource == ResourceTypes.Resources.Base)
+        switch (_selectedResource)
         {
-            string uniqueID = GenerateRandomAlphanumericCode(6);
-            float X = Random.Range(0, 101);
-            Color randomColor = new Color(Random.value, Random.value, Random.value);
+            case ResourceTypes.Resources.Base:
+                {
+                    //Generazione parametri della risorsa
 
-            GameObject instantiatedResource = Instantiate(_selectedResourcePrefab);
-            instantiatedResource.GetComponent<Base>().SetCommonValues(ID: uniqueID, Color: randomColor);
-            instantiatedResource.GetComponent<Base>().SetKeyAttribute(X: X);
-            _convey.GetComponent<Receiver>().ReceiveResource(instantiatedResource);
-        }
-        else if (_selectedResource == ResourceTypes.Resources.Body)
-        {
-            string uniqueID = GenerateRandomAlphanumericCode(6);
-            char Y = GenerateRandomChar();
-            Color randomColor = new Color(Random.value, Random.value, Random.value);
+                    string uniqueID = GenerateRandomAlphanumericCode(6);
+                    float X = Random.Range(0, 101);
+                    Color randomColor = new Color(Random.value, Random.value, Random.value);
 
-            GameObject instantiatedResource = Instantiate(_selectedResourcePrefab);
-            instantiatedResource.GetComponent<Body>().SetCommonValues(ID: uniqueID, Color: randomColor);
-            instantiatedResource.GetComponent<Body>().SetKeyAttribute(Y: Y);
-            _convey.GetComponent<Receiver>().ReceiveResource(instantiatedResource);
-        }
-        else if (_selectedResource == ResourceTypes.Resources.Detail)
-        {
-            string uniqueID = GenerateRandomAlphanumericCode(6);
-            float Z = Random.Range(-30, 31);
-            Color randomColor = new Color(Random.value, Random.value, Random.value);
+                    //Istanziamento della risorsa
 
-            GameObject instantiatedResource = Instantiate(_selectedResourcePrefab);
-            instantiatedResource.GetComponent<Detail>().SetCommonValues(ID: uniqueID, Color: randomColor);
-            instantiatedResource.GetComponent<Detail>().SetKeyAttribute(Z: Z);
-            _convey.GetComponent<Receiver>().ReceiveResource(instantiatedResource);
+                    GameObject instantiatedResource = Instantiate(_selectedResourcePrefab);
+                    instantiatedResource.GetComponent<Base>().SetCommonValues(ID: uniqueID, Color: randomColor);
+                    instantiatedResource.GetComponent<Base>().SetKeyAttribute(X: X);
+
+                    //Invio al canale di uscita
+
+                    _convey.GetComponent<Receiver>().ReceiveResource(instantiatedResource);
+                    break;
+                }
+            case ResourceTypes.Resources.Body:
+                {
+                    string uniqueID = GenerateRandomAlphanumericCode(6);
+                    char Y = GenerateRandomChar();
+                    Color randomColor = new Color(Random.value, Random.value, Random.value);
+
+                    GameObject instantiatedResource = Instantiate(_selectedResourcePrefab);
+                    instantiatedResource.GetComponent<Body>().SetCommonValues(ID: uniqueID, Color: randomColor);
+                    instantiatedResource.GetComponent<Body>().SetKeyAttribute(Y: Y);
+                    _convey.GetComponent<Receiver>().ReceiveResource(instantiatedResource);
+                    break;
+                }
+            case ResourceTypes.Resources.Detail:
+                {
+                    string uniqueID = GenerateRandomAlphanumericCode(6);
+                    float Z = Random.Range(-30, 31);
+                    Color randomColor = new Color(Random.value, Random.value, Random.value);
+
+                    GameObject instantiatedResource = Instantiate(_selectedResourcePrefab);
+                    instantiatedResource.GetComponent<Detail>().SetCommonValues(ID: uniqueID, Color: randomColor);
+                    instantiatedResource.GetComponent<Detail>().SetKeyAttribute(Z: Z);
+                    _convey.GetComponent<Receiver>().ReceiveResource(instantiatedResource);
+                    break;
+                }
+            default:
+                break;
         }
+
+        // Aumento counter delle unità generate per aggiornare la UI
 
         _countUnits++;
         _unitsProduced.text = "Units created: " + _countUnits.ToString();
     }
+
+    //Generatore della stringa alfanumerica necessaria a ogni risorsa
     private string GenerateRandomAlphanumericCode(int length)
     {
         return new string(Enumerable.Repeat(CARATTERI, length)
           .Select(s => s[Random.Range(0, s.Length)]).ToArray());
     }
+
+    //Generatore del char utile per la risorsa Body
     private char GenerateRandomChar()
     {
         return _charForBodyKey[Random.Range(0, 3)];
     }
+
+    //INTERAZIONI UI
+    //Metodi getter e setter del TimeToSpawn necessari per le interazioni tramite configurazione
+
     public float GetTimeToSpawn()
     {
         return _timeToSpawn;
