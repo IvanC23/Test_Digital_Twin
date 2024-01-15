@@ -9,11 +9,17 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _suggestions;
     [SerializeField] private GameObject _welcomePanel;
     [SerializeField] private GameObject _settingsPanel;
+    private bool _detailWasActive;
+    private bool _welcomeWasActive;
+
+
 
 
     void Awake()
     {
         TimeManager.SimulationStarted += OnSimulationStarted;
+        _detailWasActive = _detailPanel.activeSelf;
+        _welcomeWasActive = _welcomePanel.activeSelf;
     }
 
     void Update()
@@ -28,6 +34,19 @@ public class UIManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
+            if (_settingsPanel.activeSelf)
+            {
+                _detailPanel.SetActive(_detailWasActive);
+                _welcomePanel.SetActive(_welcomeWasActive);
+            }
+            else
+            {
+                _detailWasActive = _detailPanel.activeSelf;
+                _welcomeWasActive = _welcomePanel.activeSelf;
+
+                _detailPanel.SetActive(false);
+                _welcomePanel.SetActive(false);
+            }
             _settingsPanel.SetActive(!_settingsPanel.activeSelf);
         }
     }
