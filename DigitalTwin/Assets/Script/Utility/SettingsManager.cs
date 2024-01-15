@@ -11,6 +11,12 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private TMP_Dropdown _resourceDropdown;
     [SerializeField] private List<GameObject> _providerList = new List<GameObject>();
 
+    [Header("Sezione flow splitters")]
+    [SerializeField] private TMP_Dropdown _flowSplittersDropDown;
+    [SerializeField] private TMP_InputField _weight1;
+    [SerializeField] private TMP_InputField _weight2;
+    [SerializeField] private List<GameObject> _flowSplittersList = new List<GameObject>();
+
     private void Start()
     {
         PopulateDropdowns();
@@ -29,12 +35,26 @@ public class SettingsManager : MonoBehaviour
             objectNames.Add(obj.name);
         }
         _providerDropDown.AddOptions(objectNames);
+
         _providerTimeToSpawn.text = _providerList[0].GetComponent<SourceProvider>().GetTimeToSpawn().ToString();
 
         _resourceDropdown.ClearOptions();
         List<string> resourceNames = new List<string>(System.Enum.GetNames(typeof(ResourceTypes.Resources)));
         _resourceDropdown.AddOptions(resourceNames);
         _resourceDropdown.value = _providerList[0].GetComponent<SourceProvider>().GetResourceSelected();
+
+        //FLOW SPLITTERS SECTION
+
+        _flowSplittersDropDown.ClearOptions();
+        objectNames = new List<string>();
+        foreach (GameObject obj in _flowSplittersList)
+        {
+            objectNames.Add(obj.name);
+        }
+        _flowSplittersDropDown.AddOptions(objectNames);
+
+        _weight1.text = _flowSplittersList[0].GetComponent<FlowSplitter>().GetWeight(0).ToString();
+        _weight2.text = _flowSplittersList[0].GetComponent<FlowSplitter>().GetWeight(1).ToString();
 
     }
 
@@ -45,7 +65,6 @@ public class SettingsManager : MonoBehaviour
         int selectedIndex = _providerDropDown.value;
         GameObject selectedObject = _providerList[selectedIndex];
 
-        //Aggiorna gli input con i parametri dell'oggetto selezionato
         _providerTimeToSpawn.text = selectedObject.GetComponent<SourceProvider>().GetTimeToSpawn().ToString();
         _resourceDropdown.value = selectedObject.GetComponent<SourceProvider>().GetResourceSelected();
     }
@@ -59,8 +78,6 @@ public class SettingsManager : MonoBehaviour
             float parsedValue;
             if (float.TryParse(_providerTimeToSpawn.text, out parsedValue))
             {
-                Debug.Log("Parsed value: " + parsedValue.ToString());
-
                 if (parsedValue > 0)
                 {
                     _providerList[selectedIndex].GetComponent<SourceProvider>().SetNewTimeToSpawn(parsedValue);
@@ -71,7 +88,6 @@ public class SettingsManager : MonoBehaviour
 
     public void ChangeResourceDoneProvider()
     {
-        // Aggiorna il parametro 2 dell'oggetto selezionato quando l'input cambia
         int selectedIndex = _providerDropDown.value;
         if (selectedIndex >= 0 && selectedIndex < _providerList.Count)
         {
@@ -82,4 +98,54 @@ public class SettingsManager : MonoBehaviour
             }
         }
     }
+
+    //FLOW SPLITTERS SECTION
+    public void SelectFlowSplitter()
+    {
+        int selectedIndex = _flowSplittersDropDown.value;
+        GameObject selectedObject = _flowSplittersList[selectedIndex];
+
+        _weight1.text = selectedObject.GetComponent<FlowSplitter>().GetWeight(0).ToString();
+        _weight2.text = selectedObject.GetComponent<FlowSplitter>().GetWeight(1).ToString();
+    }
+
+    public void OnChangeWeight1()
+    {
+        // Aggiorna il parametro 1 dell'oggetto selezionato quando l'input cambia
+        int selectedIndex = _flowSplittersDropDown.value;
+        if (selectedIndex >= 0 && selectedIndex < _flowSplittersList.Count)
+        {
+            float parsedValue;
+            if (float.TryParse(_weight1.text, out parsedValue))
+            {
+                if (parsedValue > 0 && parsedValue <= 1.0f)
+                {
+                    _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().SetWeight1(parsedValue);
+
+                    _weight1.text = _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().GetWeight(0).ToString();
+                    _weight2.text = _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().GetWeight(1).ToString();
+                }
+            }
+        }
+    }
+
+    public void OnChangeWeight2()
+    {
+        int selectedIndex = _flowSplittersDropDown.value;
+        if (selectedIndex >= 0 && selectedIndex < _flowSplittersList.Count)
+        {
+            float parsedValue;
+            if (float.TryParse(_weight2.text, out parsedValue))
+            {
+                if (parsedValue > 0 && parsedValue <= 1.0f)
+                {
+                    _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().SetWeight2(parsedValue);
+
+                    _weight1.text = _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().GetWeight(0).ToString();
+                    _weight2.text = _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().GetWeight(1).ToString();
+                }
+            }
+        }
+    }
+
 }

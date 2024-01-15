@@ -1380,7 +1380,7 @@ GameObject:
   - component: {fileID: 200312713}
   - component: {fileID: 200312712}
   m_Layer: 5
-  m_Name: ProviderList
+  m_Name: FlowSplittersList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1408,7 +1408,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -663, y: 238}
-  m_SizeDelta: {x: 94.8, y: 30}
+  m_SizeDelta: {x: 112, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &200312712
 MonoBehaviour:
@@ -2515,6 +2515,11 @@ MonoBehaviour:
   - {fileID: 943390052}
   - {fileID: 767172373}
   - {fileID: 525698709}
+  _flowSplittersDropDown: {fileID: 200312712}
+  _weight1: {fileID: 1758328359}
+  _weight2: {fileID: 1951121261}
+  _flowSplittersList:
+  - {fileID: 990004049}
 --- !u!1001 &327453990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4670,7 +4675,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -663, y: 238}
-  m_SizeDelta: {x: 94.8, y: 30}
+  m_SizeDelta: {x: 112, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &517400747
 MonoBehaviour:
@@ -6146,7 +6151,7 @@ GameObject:
   - component: {fileID: 651285328}
   - component: {fileID: 651285327}
   m_Layer: 5
-  m_Name: ConveyList
+  m_Name: AssemblersList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6174,7 +6179,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -663, y: 238}
-  m_SizeDelta: {x: 94.8, y: 30}
+  m_SizeDelta: {x: 112, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &651285327
 MonoBehaviour:
@@ -7326,8 +7331,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8385,8 +8390,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8858,6 +8863,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980225241}
   m_CullTransparentMesh: 1
+--- !u!1 &990004049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5579858486605468828, guid: 84a541fce530f4244bbae457c7527c2a, type: 3}
+  m_PrefabInstance: {fileID: 5146665768320583850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &995305992
 GameObject:
   m_ObjectHideFlags: 0
@@ -9352,8 +9362,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10453,8 +10463,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13467,8 +13477,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14586,7 +14596,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: ChangeTimeToSpawnProvider
+        m_MethodName: OnChangeWeight1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14616,7 +14626,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: ChangeTimeToSpawnProvider
+        m_MethodName: OnChangeWeight1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14858,8 +14868,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -15393,8 +15403,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -16235,7 +16245,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: ChangeTimeToSpawnProvider
+        m_MethodName: OnChangeWeight2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16265,7 +16275,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: ChangeTimeToSpawnProvider
+        m_MethodName: OnChangeWeight2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16736,7 +16746,7 @@ GameObject:
   - component: {fileID: 2008804930}
   - component: {fileID: 2008804929}
   m_Layer: 5
-  m_Name: ConveyList
+  m_Name: BuffersList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16764,7 +16774,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -663, y: 238}
-  m_SizeDelta: {x: 94.8, y: 30}
+  m_SizeDelta: {x: 112, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2008804929
 MonoBehaviour:
@@ -17088,7 +17098,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -663, y: 238}
-  m_SizeDelta: {x: 94.8, y: 30}
+  m_SizeDelta: {x: 112, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2093683853
 MonoBehaviour:

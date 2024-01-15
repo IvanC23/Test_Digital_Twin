@@ -18,10 +18,12 @@ public class FlowSplitter : MonoBehaviour, Receiver
 
     private int _countUnitPassed1 = 0;
     private int _countUnitPassed2 = 0;
+    private List<float> _weights;
 
 
     void Awake()
     {
+        _weights = new List<float>();
         _nameText.text = "Name: " + gameObject.name;
         _moduleType.text = "Type: Flow Splitter";
         _weightConvey1.text = "Weight flow 1: " + _conveysWithWeight[0]._weight;
@@ -35,6 +37,7 @@ public class FlowSplitter : MonoBehaviour, Receiver
 
         for (int i = 0; i < _conveysWithWeight.Count; i++)
         {
+            _weights.Add(_conveysWithWeight[i]._weight);
             totalWeight += _conveysWithWeight[i]._weight;
         }
 
@@ -61,7 +64,7 @@ public class FlowSplitter : MonoBehaviour, Receiver
 
         for (int i = 0; i < _conveysWithWeight.Count; i++)
         {
-            cumulativeWeight += _conveysWithWeight[i]._weight;
+            cumulativeWeight += _weights[i];
 
             if (randomValue <= cumulativeWeight)
             {
@@ -89,6 +92,33 @@ public class FlowSplitter : MonoBehaviour, Receiver
         }
 
     }
+
+    public float GetWeight(int index)
+    {
+        if (index < _conveysWithWeight.Count && index >= 0)
+        {
+            return _weights[index];
+        }
+        else
+        {
+            return -1;
+        }
+    }
+
+    public void SetWeight1(float NewWeight)
+    {
+        _weights[0] = NewWeight;
+        _weights[1] = 1 - NewWeight;
+        _weightConvey1.text = "Weight flow 1: " + _weights[0];
+        _weightConvey2.text = "Weight flow 2: " + _weights[1];
+    }
+    public void SetWeight2(float NewWeight)
+    {
+        _weights[1] = NewWeight;
+        _weights[0] = 1 - NewWeight;
+        _weightConvey1.text = "Weight flow 1: " + _weights[0];
+        _weightConvey2.text = "Weight flow 2: " + _weights[1];
+    }
 }
 
 [System.Serializable]
@@ -96,4 +126,5 @@ public struct ConveyWithWeight
 {
     public Convey _convey;
     public float _weight;
+
 }
