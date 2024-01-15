@@ -2560,6 +2560,10 @@ MonoBehaviour:
   - {fileID: 219068458}
   - {fileID: 77754903}
   - {fileID: 633784280}
+  _buffersDropDown: {fileID: 2008804929}
+  _timeToBuff: {fileID: 898729791}
+  _buffersList:
+  - {fileID: 1452670188}
 --- !u!1001 &327453990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8055,7 +8059,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: ChangeTimeToSpawnProvider
+        m_MethodName: OnBufferingChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8085,7 +8089,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: ChangeTimeToSpawnProvider
+        m_MethodName: OnBufferingChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12432,6 +12436,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443032760}
   m_CullTransparentMesh: 1
+--- !u!1 &1452670188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4698414983165416668, guid: 34f9c1ee4c5ad514497c69438caf82dc, type: 3}
+  m_PrefabInstance: {fileID: 1081257696}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1454292796
 GameObject:
   m_ObjectHideFlags: 0
@@ -16912,7 +16921,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: SelectProvider
+        m_MethodName: SelectBuffer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

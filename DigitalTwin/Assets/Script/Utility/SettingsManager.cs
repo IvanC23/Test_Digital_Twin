@@ -21,6 +21,10 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private TMP_Dropdown _conveysDropDown;
     [SerializeField] private TMP_InputField _speed;
     [SerializeField] private List<GameObject> _conveysList = new List<GameObject>();
+    [Header("Sezione buffers")]
+    [SerializeField] private TMP_Dropdown _buffersDropDown;
+    [SerializeField] private TMP_InputField _timeToBuff;
+    [SerializeField] private List<GameObject> _buffersList = new List<GameObject>();
 
     private void Start()
     {
@@ -73,6 +77,19 @@ public class SettingsManager : MonoBehaviour
         _conveysDropDown.AddOptions(objectNames);
 
         _speed.text = _conveysList[0].GetComponent<Convey>().GetSpeed().ToString();
+
+        //BUFFERS SECTION
+
+        _buffersDropDown.ClearOptions();
+
+        objectNames = new List<string>();
+        foreach (GameObject obj in _buffersList)
+        {
+            objectNames.Add(obj.name);
+        }
+        _buffersDropDown.AddOptions(objectNames);
+
+        _timeToBuff.text = _buffersList[0].GetComponent<Buffer>().GetTimeToBuff().ToString();
 
     }
 
@@ -189,6 +206,34 @@ public class SettingsManager : MonoBehaviour
                 {
                     _conveysList[selectedIndex].GetComponent<Convey>().SetSpeed(parsedValue);
                     _speed.text = _conveysList[selectedIndex].GetComponent<Convey>().GetSpeed().ToString();
+                }
+            }
+        }
+    }
+
+    //BUFFERS SECTION
+
+    public void SelectBuffer()
+    {
+        int selectedIndex = _buffersDropDown.value;
+        GameObject selectedObject = _buffersList[selectedIndex];
+
+        _timeToBuff.text = selectedObject.GetComponent<Buffer>().GetTimeToBuff().ToString();
+    }
+
+    public void OnBufferingChange()
+    {
+        // Aggiorna il parametro 1 dell'oggetto selezionato quando l'input cambia
+        int selectedIndex = _buffersDropDown.value;
+        if (selectedIndex >= 0 && selectedIndex < _buffersList.Count)
+        {
+            float parsedValue;
+            if (float.TryParse(_timeToBuff.text, out parsedValue))
+            {
+                if (parsedValue > 0)
+                {
+                    _buffersList[selectedIndex].GetComponent<Buffer>().SetTimeToBuff(parsedValue);
+                    _timeToBuff.text = _buffersList[selectedIndex].GetComponent<Buffer>().GetTimeToBuff().ToString();
                 }
             }
         }

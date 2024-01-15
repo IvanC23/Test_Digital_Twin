@@ -73,4 +73,15 @@ public class Buffer : MonoBehaviour, Receiver
             _isWaiting = false;
         }
     }
+
+    public float GetTimeToBuff()
+    {
+        return _timeToBuff;
+    }
+
+    public void SetTimeToBuff(float NewBuff)
+    {
+        _timeToBuff = NewBuff;
+        _timeBuff.text = "Buffering time: " + _timeToBuff;
+    }
 }
