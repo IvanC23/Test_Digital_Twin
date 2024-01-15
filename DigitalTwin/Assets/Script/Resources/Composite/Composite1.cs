@@ -7,6 +7,9 @@ public class Composite1 : MonoBehaviour, HeightSender
     [SerializeField] Base _base1;
     [SerializeField] Base _base2;
 
+    // I composite sono degli oggetti creati per gestire le varie composizioni di risorse possibili
+    // ogni composite gestisce il prefab corrispondente. 
+
     public void SetValuesBase1(string ID, float X, Color Color)
     {
         _base1.SetCommonValues(ID, Color);

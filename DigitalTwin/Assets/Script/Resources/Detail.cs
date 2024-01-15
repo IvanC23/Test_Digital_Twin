@@ -6,10 +6,15 @@ public class Detail : AbstractResource
 {
     [Header("Attributo chiave, solo per visualizzazione")]
     [SerializeField] private float _z;
-    public void SetKeyAttribute(float Z){
+
+    //Estensione della classe astratta per gestire l'attributo chiave del detail
+
+    public void SetKeyAttribute(float Z)
+    {
         _z = Z;
     }
-    public float GetKeyAttribute(){
+    public float GetKeyAttribute()
+    {
         return _z;
     }
 }

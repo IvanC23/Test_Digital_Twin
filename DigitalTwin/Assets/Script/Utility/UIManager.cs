@@ -12,8 +12,11 @@ public class UIManager : MonoBehaviour
     private bool _detailWasActive;
     private bool _welcomeWasActive;
 
+    //Gestore dell'attivazione e disattivazione dei pannelli del Menù principale
 
 
+    //All'inizio dell'esperienza, comincia a conservare lo stato di attivazione 
+    //dei pannelli di benvenuto e delle istruzioni.
 
     void Awake()
     {
@@ -34,6 +37,8 @@ public class UIManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
+            //Se sto aprendo il pannello della configurazione, salvo lo stato attuale dei 2 pannelli sottocitati
+            //in maniera da farli tornare al loro stato precedente una volta chiudo il menù di configurazione
             if (_settingsPanel.activeSelf)
             {
                 _detailPanel.SetActive(_detailWasActive);
@@ -55,6 +60,8 @@ public class UIManager : MonoBehaviour
     {
         TimeManager.SimulationStarted -= OnSimulationStarted;
     }
+
+    //Una volta cominciata la simulazione, il pannello di benvenuto non sarà più necessario
 
     private void OnSimulationStarted()
     {

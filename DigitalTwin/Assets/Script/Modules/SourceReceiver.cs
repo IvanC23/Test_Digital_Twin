@@ -11,7 +11,12 @@ public class SourceReceiver : MonoBehaviour, Receiver
     [SerializeField] private TextMeshPro _resourcesTaken;
     private List<GameObject> _resourcesCollected = new List<GameObject>();
 
+    //Ricevitore di risorse, si limita ad accumulare le risorse alla fine di un percorso
+
+    //Counter delle risorse accumulate/arrivate.
     private int _countTaken = 0;
+
+    // Riempimento UI modulo iniziale
 
     void Awake()
     {

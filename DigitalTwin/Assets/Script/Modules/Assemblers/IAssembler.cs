@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IAssembler
 {
-    //Interfaccia necessaria per astrarre gli assembler per prendere i parametri nel pannello delle impostazioni
+    //Interfaccia necessaria per astrarre gli assembler e prenderne i parametri nel pannello delle impostazioni
     float GetAssembleTime();
     void SetAssembleTime(float NewTime);
 }

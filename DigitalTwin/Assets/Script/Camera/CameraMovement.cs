@@ -10,6 +10,11 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 200f;
     private bool _isOnTopView = false;
     private bool _isTPressed = false;
+
+    //Camera controller, gestito in due modalità, grounded e flying
+    //A seconda della modalità viene modificato il movimento sugli assi per mantenere coerenza
+    //I movimenti vengono modificati tramite unscaledDeltaTime per permettere alla camera di muoversi anche
+    //durante la pausa.
     void Update()
     {
         //GROUNDED CAMERA BRANCH
@@ -63,7 +68,7 @@ public class CameraMovement : MonoBehaviour
                     _moveSpeed *= 2f;
 
                     transform.Rotate(90f, 0f, 0f);
-                    transform.position += UnityEngine.Vector3.up * 7.0f;
+                    transform.position = new UnityEngine.Vector3(transform.position.x, 7.0f, transform.position.z);
 
                     _isOnTopView = !_isOnTopView;
 

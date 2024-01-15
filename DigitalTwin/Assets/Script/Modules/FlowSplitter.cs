@@ -93,6 +93,9 @@ public class FlowSplitter : MonoBehaviour, Receiver
 
     }
 
+    //INTERAZIONI UI
+    //Metodi getter e setter del TimeToSpawn necessari per le interazioni tramite configurazione
+
     public float GetWeight(int index)
     {
         if (index < _conveysWithWeight.Count && index >= 0)
@@ -121,6 +124,7 @@ public class FlowSplitter : MonoBehaviour, Receiver
     }
 }
 
+//Struct costruita per facilitare il settaggio in Editor dei canali d'uscita per un flow splitter
 [System.Serializable]
 public struct ConveyWithWeight
 {

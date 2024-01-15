@@ -13,6 +13,8 @@ public abstract class AbstractResource : MonoBehaviour,HeightSender
     [SerializeField] private string _myID;
     [SerializeField] private Color _myColor;
 
+    //Classe astratta comune tra tutto le risorse, prevede i metodi di inizializzazione dei vari parametri della risorsa
+
     public void SetCommonValues(string ID, Color Color)
     {
         _myID = ID;

@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class TimeManager : MonoBehaviour
 {
     [Header("Parametro configurabile")]
-    [SerializeField] private float _actualScale = 1.0f;
+    [SerializeField] private float _actualTimeScale = 1.0f;
 
     [Header("Parametro configurabile")]
     [SerializeField] private TMP_Text _pauseText;
@@ -20,10 +20,15 @@ public class TimeManager : MonoBehaviour
     private bool _inPause = false;
     private bool _started = false;
 
+    //All'inizio dell'esperienza, la simulazione sarà ferma
+
     void Awake()
     {
         Time.timeScale = 0f;
     }
+
+    //Gestione del tempo e dell'esperienza (uscita dal gioco/restart esperienza)
+    //Lo script é collegato ai Text esterni che danno informazioni sulla scala temporale
 
     void Update()
     {
@@ -37,33 +42,33 @@ public class TimeManager : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.N))
             {
-                if (_actualScale > 0.21f)
+                if (_actualTimeScale > 0.21f)
                 {
-                    _actualScale -= 0.2f;
+                    _actualTimeScale -= 0.2f;
                     if (!_inPause)
                     {
-                        Time.timeScale = _actualScale;
-                        _scaleTimeText.text = "x" + Math.Floor(_actualScale * 10) / 10;
+                        Time.timeScale = _actualTimeScale;
+                        _scaleTimeText.text = "x" + Math.Floor(_actualTimeScale * 10) / 10;
                     }
                 }
                 else
                 {
-                    _actualScale = 0.0f;
+                    _actualTimeScale = 0.0f;
                     if (!_inPause)
                     {
-                        Time.timeScale = _actualScale;
-                        _scaleTimeText.text = "x" + Math.Floor(_actualScale * 10) / 10;
+                        Time.timeScale = _actualTimeScale;
+                        _scaleTimeText.text = "x" + Math.Floor(_actualTimeScale * 10) / 10;
                     }
                 }
 
             }
             if (Input.GetKeyDown(KeyCode.M))
             {
-                _actualScale += 0.2f;
+                _actualTimeScale += 0.2f;
                 if (!_inPause)
                 {
-                    Time.timeScale = _actualScale;
-                    _scaleTimeText.text = "x" + Math.Floor(_actualScale * 10) / 10;
+                    Time.timeScale = _actualTimeScale;
+                    _scaleTimeText.text = "x" + Math.Floor(_actualTimeScale * 10) / 10;
                 }
             }
 
@@ -89,6 +94,8 @@ public class TimeManager : MonoBehaviour
         }
     }
 
+    //Gestione pausa
+
     void managePause()
     {
         if (_inPause)
@@ -99,12 +106,15 @@ public class TimeManager : MonoBehaviour
         }
         else
         {
-            Time.timeScale = _actualScale;
-            _scaleTimeText.text = "x" + Math.Floor(_actualScale * 10) / 10;
+            Time.timeScale = _actualTimeScale;
+            _scaleTimeText.text = "x" + Math.Floor(_actualTimeScale * 10) / 10;
             _pauseText.enabled = false;
             _scaleTimeText.enabled = true;
         }
     }
+
+    //Startup iniziale, viene invocato l'evento SimulationStarted, utile per moduli che devono attivarsi 
+    //solo in quel momento, come i Source Providers.
 
     void StartScene()
     {
@@ -113,6 +123,8 @@ public class TimeManager : MonoBehaviour
 
         SimulationStarted?.Invoke();
     }
+
+    //Restart della scena
 
     void RestartScene()
     {
@@ -124,6 +136,8 @@ public class TimeManager : MonoBehaviour
 #endif
         }
     }
+
+    //Uscita dalla scena
 
     void QuitScene()
     {

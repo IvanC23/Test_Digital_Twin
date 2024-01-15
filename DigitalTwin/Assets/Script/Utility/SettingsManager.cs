@@ -32,10 +32,18 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private TMP_InputField _timeToAssemble;
     [SerializeField] private List<GameObject> _assemblersList = new List<GameObject>();
 
+    //Gestore dei vari componenti del pannello di configurazione, all'interno del quale vi sono componenti
+    //dropdown per selezionare una trai vari moduli di una determinata categoria e vari input field per
+    //modificarne i parametri durante l'esperienza. Vi é un dropdown aggiuntivo per selezionare la tipologia 
+    //di risorsa da produrre tramite source provider.
+
     private void Start()
     {
         PopulateDropdowns();
     }
+
+    //Popolamento iniziale del menù di configurazione tramite riempimento delle DropdownList e dei campi di testo con le informazioni già presenti
+    //Per questioni di leggibilità, sopra ogni sezione vi é indicato a quelo modulo faccia riferimento.
 
     void PopulateDropdowns()
     {
@@ -112,7 +120,15 @@ public class SettingsManager : MonoBehaviour
 
     }
 
-    //INPUT MANAGEMENT
+    
+    
+    //Gestione input, qui ci sono le funzioni chiamate dai vari componenti del menù quando vi si interagisce
+    //Dopo aver selezionato un componente dalla dropdownlist, viene chiamata una funzione Select in cui si ripopolano
+    //i campi con le informazioni del componente selezionato. Dopo aver cambiato uno qualsiasi dei campi, viene invece
+    //chiamata una funzione change per risettarli all'interno del componente. 
+
+    //Nel parsing del valore ottenuto tramite interfaccia, ci assicuriamo che sia un valore maggiore di 0 e che non contenga
+    //caratteri.
 
     //PROVIDERS SECTION
 

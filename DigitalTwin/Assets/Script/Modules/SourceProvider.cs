@@ -110,9 +110,10 @@ public class SourceProvider : MonoBehaviour
     {
         _timeToSpawn = NewValue;
         _creationTime.text = "Creation time: " + _timeToSpawn + "s";
-        if(_isStarted){
-        CancelInvoke("SpawnResourceAtInterval");
-        InvokeRepeating("SpawnResourceAtInterval", _timeToSpawn, _timeToSpawn);
+        if (_isStarted)
+        {
+            CancelInvoke("SpawnResourceAtInterval");
+            InvokeRepeating("SpawnResourceAtInterval", _timeToSpawn, _timeToSpawn);
         }
     }
     public int GetResourceSelected()

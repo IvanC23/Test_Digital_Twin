@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ResourceTypes : MonoBehaviour
 {
+    //Enumerable utilizzato per identificare le 3 tipologie di risorsa base
 public enum Resources
 {
     Base,
@@ -11,10 +12,4 @@ public enum Resources
     Detail
 }
 
-public enum Composites
-{
-    Composite1,
-    Composite2,
-    Composite3
-}
 }
