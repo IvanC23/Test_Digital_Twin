@@ -2564,8 +2564,8 @@ MonoBehaviour:
   _timeToBuff: {fileID: 898729791}
   _buffersList:
   - {fileID: 1452670188}
-  _assemblersDropDown: {fileID: 2008804929}
-  _timeToAssemble: {fileID: 898729791}
+  _assemblersDropDown: {fileID: 651285327}
+  _timeToAssemble: {fileID: 868792268}
   _assemblersList:
   - {fileID: 1077970111}
   - {fileID: 381742794}
@@ -2937,7 +2937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9015254259621296754, guid: 2016f935dde45df4999389f4643802b9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.34
+      value: -5.09
       objectReference: {fileID: 0}
     - target: {fileID: 9015254259621296754, guid: 2016f935dde45df4999389f4643802b9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3417,7 +3417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2787510603604833713, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.38
+      value: -14.55
       objectReference: {fileID: 0}
     - target: {fileID: 2787510603604833713, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3425,23 +3425,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2787510603604833713, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.53
+      value: -2.33
       objectReference: {fileID: 0}
     - target: {fileID: 2787510603604833713, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.93257606
+      value: 0.9393938
       objectReference: {fileID: 0}
     - target: {fileID: 2787510603604833713, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2787510603604833713, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.3609736
+      value: -0.34284
       objectReference: {fileID: 0}
     - target: {fileID: 2787510603604833713, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2787510603604833713, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3449,7 +3449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2787510603604833713, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -42.32
+      value: -40.1
       objectReference: {fileID: 0}
     - target: {fileID: 2787510603604833713, guid: 22fc1285650507043a9ef9ca8dfefa8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -7790,7 +7790,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: OnAssembleTimeChange
+        m_MethodName: ChangeAssembleTime
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7820,7 +7820,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: OnAssembleTimeChange
+        m_MethodName: ChangeAssembleTime
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8075,7 +8075,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: OnBufferingChange
+        m_MethodName: ChangeBuffering
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8105,7 +8105,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: OnBufferingChange
+        m_MethodName: ChangeBuffering
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8456,7 +8456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tempo di attesa
+  m_text: Tempo creazione
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17420,7 +17420,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: OnSpeedChange
+        m_MethodName: ChangeSpeed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17450,7 +17450,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313801446}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: OnSpeedChange
+        m_MethodName: ChangeSpeed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

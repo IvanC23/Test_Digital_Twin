@@ -23,6 +23,7 @@ public class SourceProvider : MonoBehaviour
     private GameObject _selectedResourcePrefab;
     const string CARATTERI = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     private int _countUnits = 0;
+    private bool _isStarted = false;
 
 
     void Awake()
@@ -46,6 +47,7 @@ public class SourceProvider : MonoBehaviour
 
     private void OnSimulationStarted()
     {
+        _isStarted = true;
         InvokeRepeating("SpawnResourceAtInterval", 0f, _timeToSpawn);
     }
 
@@ -108,8 +110,10 @@ public class SourceProvider : MonoBehaviour
     {
         _timeToSpawn = NewValue;
         _creationTime.text = "Creation time: " + _timeToSpawn + "s";
+        if(_isStarted){
         CancelInvoke("SpawnResourceAtInterval");
-        InvokeRepeating("SpawnResourceAtInterval", 0f, _timeToSpawn);
+        InvokeRepeating("SpawnResourceAtInterval", _timeToSpawn, _timeToSpawn);
+        }
     }
     public int GetResourceSelected()
     {

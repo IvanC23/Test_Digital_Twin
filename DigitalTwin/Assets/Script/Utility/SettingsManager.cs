@@ -112,6 +112,8 @@ public class SettingsManager : MonoBehaviour
 
     }
 
+    //INPUT MANAGEMENT
+
     //PROVIDERS SECTION
 
     public void SelectProvider()
@@ -135,6 +137,18 @@ public class SettingsManager : MonoBehaviour
                 if (parsedValue > 0)
                 {
                     _providerList[selectedIndex].GetComponent<SourceProvider>().SetNewTimeToSpawn(parsedValue);
+                }
+            }
+            else
+            {
+                if (_providerTimeToSpawn.text.Length == 0)
+                {
+                    _providerTimeToSpawn.text = "";
+
+                }
+                else
+                {
+                    _providerTimeToSpawn.text = _providerTimeToSpawn.text.Substring(0, _providerTimeToSpawn.text.Length - 1);
                 }
             }
         }
@@ -176,8 +190,19 @@ public class SettingsManager : MonoBehaviour
                 {
                     _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().SetWeight1(parsedValue);
 
-                    _weight1.text = _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().GetWeight(0).ToString();
                     _weight2.text = _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().GetWeight(1).ToString();
+                }
+            }
+            else
+            {
+                if (_weight1.text.Length == 0)
+                {
+                    _weight1.text = "";
+
+                }
+                else
+                {
+                    _weight1.text = _weight1.text.Substring(0, _weight1.text.Length - 1);
                 }
             }
         }
@@ -195,8 +220,19 @@ public class SettingsManager : MonoBehaviour
                 {
                     _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().SetWeight2(parsedValue);
 
-                    _weight1.text = _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().GetWeight(0).ToString();
                     _weight2.text = _flowSplittersList[selectedIndex].GetComponent<FlowSplitter>().GetWeight(1).ToString();
+                }
+            }
+            else
+            {
+                if (_weight2.text.Length == 0)
+                {
+                    _weight2.text = "";
+
+                }
+                else
+                {
+                    _weight2.text = _weight2.text.Substring(0, _weight2.text.Length - 1);
                 }
             }
         }
@@ -212,10 +248,11 @@ public class SettingsManager : MonoBehaviour
         _speed.text = selectedObject.GetComponent<Convey>().GetSpeed().ToString();
     }
 
-    public void OnSpeedChange()
+    public void ChangeSpeed()
     {
         // Aggiorna il parametro 1 dell'oggetto selezionato quando l'input cambia
         int selectedIndex = _conveysDropDown.value;
+        
         if (selectedIndex >= 0 && selectedIndex < _conveysList.Count)
         {
             float parsedValue;
@@ -224,7 +261,18 @@ public class SettingsManager : MonoBehaviour
                 if (parsedValue > 0)
                 {
                     _conveysList[selectedIndex].GetComponent<Convey>().SetSpeed(parsedValue);
-                    _speed.text = _conveysList[selectedIndex].GetComponent<Convey>().GetSpeed().ToString();
+                }
+            }
+            else
+            {
+                if (_speed.text.Length == 0)
+                {
+                    _speed.text = "";
+
+                }
+                else
+                {
+                    _speed.text = _speed.text.Substring(0, _speed.text.Length - 1);
                 }
             }
         }
@@ -240,7 +288,7 @@ public class SettingsManager : MonoBehaviour
         _timeToBuff.text = selectedObject.GetComponent<Buffer>().GetTimeToBuff().ToString();
     }
 
-    public void OnBufferingChange()
+    public void ChangeBuffering()
     {
         // Aggiorna il parametro 1 dell'oggetto selezionato quando l'input cambia
         int selectedIndex = _buffersDropDown.value;
@@ -252,7 +300,18 @@ public class SettingsManager : MonoBehaviour
                 if (parsedValue > 0)
                 {
                     _buffersList[selectedIndex].GetComponent<Buffer>().SetTimeToBuff(parsedValue);
-                    _timeToBuff.text = _buffersList[selectedIndex].GetComponent<Buffer>().GetTimeToBuff().ToString();
+                }
+            }
+            else
+            {
+                if (_timeToBuff.text.Length == 0)
+                {
+                    _timeToBuff.text = "";
+
+                }
+                else
+                {
+                    _timeToBuff.text = _timeToBuff.text.Substring(0, _timeToBuff.text.Length - 1);
                 }
             }
         }
@@ -268,7 +327,7 @@ public class SettingsManager : MonoBehaviour
         _timeToAssemble.text = selectedObject.GetComponent<IAssembler>().GetAssembleTime().ToString();
     }
 
-    public void OnAssembleTimeChange()
+    public void ChangeAssembleTime()
     {
         // Aggiorna il parametro 1 dell'oggetto selezionato quando l'input cambia
         int selectedIndex = _assemblersDropDown.value;
@@ -280,7 +339,18 @@ public class SettingsManager : MonoBehaviour
                 if (parsedValue > 0)
                 {
                     _assemblersList[selectedIndex].GetComponent<IAssembler>().SetAssembleTime(parsedValue);
-                    _timeToAssemble.text = _assemblersList[selectedIndex].GetComponent<IAssembler>().GetAssembleTime().ToString();
+                }
+            }
+            else
+            {
+                if (_timeToAssemble.text.Length == 0)
+                {
+                    _timeToAssemble.text = "";
+
+                }
+                else
+                {
+                    _timeToAssemble.text = _timeToAssemble.text.Substring(0, _timeToAssemble.text.Length - 1);
                 }
             }
         }
