@@ -29,7 +29,7 @@ public class SourceReceiver : MonoBehaviour, Receiver
     {
         if (Resource.CompareTag("Resource"))
         {
-            _resourcesCollected.Add(Resource);
+            //_resourcesCollected.Add(Resource);
 
             _countTaken++;
             _resourcesTaken.text = "Resources collected: " + _countTaken;

@@ -40,6 +40,10 @@ public class FlowSplitter : MonoBehaviour, Receiver
             _weights.Add(_conveysWithWeight[i]._weight);
             totalWeight += _conveysWithWeight[i]._weight;
         }
+        if (_conveysWithWeight.Count < 2)
+        {
+            Debug.LogError("Attenzione, colloca almeno 2 trasportatori all'interno del Flow Splitter");
+        }
 
         if (totalWeight != 1.0f)
         {

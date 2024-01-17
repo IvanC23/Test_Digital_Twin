@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 4054439415104215803}
   - component: {fileID: 4054439415104215802}
   m_Layer: 0
-  m_Name: QualityChecker
+  m_Name: QualityAssurance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1071,6 +1071,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4505375501085395071, guid: 4e9ba87d95393c345a2082adc885b106, type: 3}
+      propertyPath: m_text
+      value: Conveyors
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505375501085395071, guid: 4e9ba87d95393c345a2082adc885b106, type: 3}
+      propertyPath: m_margin.z
+      value: 110.05992
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505375501085395071, guid: 4e9ba87d95393c345a2082adc885b106, type: 3}
       propertyPath: m_fontStyle
       value: 1
       objectReference: {fileID: 0}
@@ -1098,6 +1106,10 @@ PrefabInstance:
       propertyPath: m_fontStyle
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4505375501494890814, guid: 4e9ba87d95393c345a2082adc885b106, type: 3}
+      propertyPath: m_Name
+      value: ConveyorsList
+      objectReference: {fileID: 0}
     - target: {fileID: 4505375501664051766, guid: 4e9ba87d95393c345a2082adc885b106, type: 3}
       propertyPath: m_fontColor.b
       value: 1
@@ -1129,6 +1141,10 @@ PrefabInstance:
     - target: {fileID: 4505375501726222231, guid: 4e9ba87d95393c345a2082adc885b106, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505375501848680368, guid: 4e9ba87d95393c345a2082adc885b106, type: 3}
+      propertyPath: m_Name
+      value: Conveyors
       objectReference: {fileID: 0}
     - target: {fileID: 4505375501856288503, guid: 4e9ba87d95393c345a2082adc885b106, type: 3}
       propertyPath: m_fontColor.b
